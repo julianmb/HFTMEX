@@ -1,0 +1,356 @@
+11/7/2019 3:54:52 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: testnet.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: vTvImppEWDcsvCU2Bb4tjQ==
+                           Sec-WebSocket-Version: 13
+11/7/2019 3:54:53 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Thu, 11 Jul 2019 07:54:54 GMT
+                           Connection: upgrade
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: 9pFfTHVoD6tVsR6Np1v3X/+cnJc=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+11/7/2019 3:54:53 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: testnet.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: vTvImppEWDcsvCU2Bb4tjQ==
+                           Sec-WebSocket-Version: 13
+11/7/2019 3:54:53 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Thu, 11 Jul 2019 07:54:55 GMT
+                           Connection: upgrade
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: 9pFfTHVoD6tVsR6Np1v3X/+cnJc=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+11/7/2019 3:55:21 PM|Trace|WebSocket.close:0|Begin closing the connection.
+11/7/2019 3:55:21 PM|Info |WebSocket.close:0|Closing the connection has already been done.
+11/7/2019 3:55:21 PM|Debug|WebSocket.closeHandshake:0|Was clean?: True
+                             sent: True
+                             received: True
+11/7/2019 3:55:21 PM|Trace|WebSocket.close:0|End closing the connection.
+11/7/2019 3:55:21 PM|Trace|WebSocket.close:0|Begin closing the connection.
+11/7/2019 3:55:22 PM|Info |WebSocket.close:0|Closing the connection has already been done.
+11/7/2019 3:55:22 PM|Debug|WebSocket.closeHandshake:0|Was clean?: True
+                             sent: True
+                             received: True
+11/7/2019 3:55:22 PM|Trace|WebSocket.close:0|End closing the connection.
+11/7/2019 3:56:41 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: testnet.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: UM4L+kRXNLNKRJlwlXTrhA==
+                           Sec-WebSocket-Version: 13
+11/7/2019 3:56:42 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Thu, 11 Jul 2019 07:56:43 GMT
+                           Connection: upgrade
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: W9I7WVZ1HzTv18CbYGr1pcCMV4E=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+11/7/2019 3:56:42 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: testnet.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: UM4L+kRXNLNKRJlwlXTrhA==
+                           Sec-WebSocket-Version: 13
+11/7/2019 3:56:42 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Thu, 11 Jul 2019 07:56:44 GMT
+                           Connection: upgrade
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: W9I7WVZ1HzTv18CbYGr1pcCMV4E=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+11/7/2019 3:58:54 PM|Trace|WebSocket.close:0|Begin closing the connection.
+11/7/2019 3:58:54 PM|Info |WebSocket.close:0|Closing the connection has already been done.
+11/7/2019 3:58:54 PM|Debug|WebSocket.closeHandshake:0|Was clean?: True
+                             sent: True
+                             received: True
+11/7/2019 3:58:54 PM|Trace|WebSocket.close:0|End closing the connection.
+11/7/2019 3:58:54 PM|Trace|WebSocket.close:0|Begin closing the connection.
+11/7/2019 3:58:54 PM|Info |WebSocket.close:0|Closing the connection has already been done.
+11/7/2019 3:58:54 PM|Debug|WebSocket.closeHandshake:0|Was clean?: True
+                             sent: True
+                             received: True
+11/7/2019 3:58:54 PM|Trace|WebSocket.close:0|End closing the connection.
+11/7/2019 4:04:09 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: testnet.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: jkpGgV6pTabMleCwoOffbQ==
+                           Sec-WebSocket-Version: 13
+11/7/2019 4:04:10 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Thu, 11 Jul 2019 08:04:11 GMT
+                           Connection: upgrade
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: SXTvCuOtWoM5uiWo9jvkLoTxCmA=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+11/7/2019 4:04:10 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: testnet.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: jkpGgV6pTabMleCwoOffbQ==
+                           Sec-WebSocket-Version: 13
+11/7/2019 4:04:10 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Thu, 11 Jul 2019 08:04:12 GMT
+                           Connection: upgrade
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: SXTvCuOtWoM5uiWo9jvkLoTxCmA=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+11/7/2019 4:07:59 PM|Trace|WebSocket.close:0|Begin closing the connection.
+11/7/2019 4:07:59 PM|Info |WebSocket.close:0|Closing the connection has already been done.
+11/7/2019 4:07:59 PM|Debug|WebSocket.closeHandshake:0|Was clean?: True
+                             sent: True
+                             received: True
+11/7/2019 4:07:59 PM|Trace|WebSocket.close:0|End closing the connection.
+11/7/2019 4:07:59 PM|Trace|WebSocket.close:0|Begin closing the connection.
+11/7/2019 4:07:59 PM|Info |WebSocket.close:0|Closing the connection has already been done.
+11/7/2019 4:07:59 PM|Debug|WebSocket.closeHandshake:0|Was clean?: True
+                             sent: True
+                             received: True
+11/7/2019 4:07:59 PM|Trace|WebSocket.close:0|End closing the connection.
+11/7/2019 4:12:02 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: testnet.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: wSutBIDwixAC1tl0i3h3Fg==
+                           Sec-WebSocket-Version: 13
+11/7/2019 4:12:02 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Thu, 11 Jul 2019 08:12:04 GMT
+                           Connection: upgrade
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: WISVw51FQh1sf5zcW+FF30qN5UI=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+11/7/2019 4:12:03 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: testnet.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: wSutBIDwixAC1tl0i3h3Fg==
+                           Sec-WebSocket-Version: 13
+11/7/2019 4:12:03 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Thu, 11 Jul 2019 08:12:04 GMT
+                           Connection: upgrade
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: WISVw51FQh1sf5zcW+FF30qN5UI=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+11/7/2019 4:12:06 PM|Trace|WebSocket.close:0|Begin closing the connection.
+11/7/2019 4:12:06 PM|Info |WebSocket.close:0|Closing the connection has already been done.
+11/7/2019 4:12:06 PM|Debug|WebSocket.closeHandshake:0|Was clean?: True
+                             sent: True
+                             received: True
+11/7/2019 4:12:06 PM|Trace|WebSocket.close:0|End closing the connection.
+11/7/2019 4:12:06 PM|Trace|WebSocket.close:0|Begin closing the connection.
+11/7/2019 4:12:06 PM|Info |WebSocket.close:0|Closing the connection has already been done.
+11/7/2019 4:12:06 PM|Debug|WebSocket.closeHandshake:0|Was clean?: True
+                             sent: True
+                             received: True
+11/7/2019 4:12:06 PM|Trace|WebSocket.close:0|End closing the connection.
+11/7/2019 4:13:07 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: testnet.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: VoXrfOQ6LQimWvkGFNhMww==
+                           Sec-WebSocket-Version: 13
+11/7/2019 4:13:07 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Thu, 11 Jul 2019 08:13:08 GMT
+                           Connection: upgrade
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: ZRK3rq5h58QbELU1QaPwqTRuW34=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+11/7/2019 4:13:07 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: testnet.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: VoXrfOQ6LQimWvkGFNhMww==
+                           Sec-WebSocket-Version: 13
+11/7/2019 4:13:08 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Thu, 11 Jul 2019 08:13:09 GMT
+                           Connection: upgrade
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: ZRK3rq5h58QbELU1QaPwqTRuW34=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+11/7/2019 4:13:11 PM|Trace|WebSocket.close:0|Begin closing the connection.
+11/7/2019 4:13:11 PM|Info |WebSocket.close:0|Closing the connection has already been done.
+11/7/2019 4:13:11 PM|Debug|WebSocket.closeHandshake:0|Was clean?: True
+                             sent: True
+                             received: True
+11/7/2019 4:13:11 PM|Trace|WebSocket.close:0|End closing the connection.
+11/7/2019 4:13:11 PM|Trace|WebSocket.close:0|Begin closing the connection.
+11/7/2019 4:13:11 PM|Info |WebSocket.close:0|Closing the connection has already been done.
+11/7/2019 4:13:11 PM|Debug|WebSocket.closeHandshake:0|Was clean?: True
+                             sent: True
+                             received: True
+11/7/2019 4:13:11 PM|Trace|WebSocket.close:0|End closing the connection.
+11/7/2019 4:17:54 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: testnet.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: XmnOTBRuqCmsWD7jj5lyAw==
+                           Sec-WebSocket-Version: 13
+11/7/2019 4:17:54 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Thu, 11 Jul 2019 08:17:56 GMT
+                           Connection: upgrade
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: +seWq77XGl5ZhqPt7/OB2/g0uXA=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+11/7/2019 4:17:55 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: testnet.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: XmnOTBRuqCmsWD7jj5lyAw==
+                           Sec-WebSocket-Version: 13
+11/7/2019 4:17:55 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Thu, 11 Jul 2019 08:17:56 GMT
+                           Connection: upgrade
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: +seWq77XGl5ZhqPt7/OB2/g0uXA=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+11/7/2019 4:18:05 PM|Trace|WebSocket.close:0|Begin closing the connection.
+11/7/2019 4:18:05 PM|Info |WebSocket.close:0|Closing the connection has already been done.
+11/7/2019 4:18:05 PM|Debug|WebSocket.closeHandshake:0|Was clean?: True
+                             sent: True
+                             received: True
+11/7/2019 4:18:05 PM|Trace|WebSocket.close:0|End closing the connection.
+11/7/2019 4:18:05 PM|Trace|WebSocket.close:0|Begin closing the connection.
+11/7/2019 4:18:05 PM|Info |WebSocket.close:0|Closing the connection has already been done.
+11/7/2019 4:18:05 PM|Debug|WebSocket.closeHandshake:0|Was clean?: True
+                             sent: True
+                             received: True
+11/7/2019 4:18:05 PM|Trace|WebSocket.close:0|End closing the connection.
+11/7/2019 4:20:10 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: testnet.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: JpzKu488zIZJVD58u1EN3w==
+                           Sec-WebSocket-Version: 13
+11/7/2019 4:20:10 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Thu, 11 Jul 2019 08:20:12 GMT
+                           Connection: upgrade
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: YuTjZN2BNnJZTKzOql8+9bircwU=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+11/7/2019 4:20:11 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: testnet.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: JpzKu488zIZJVD58u1EN3w==
+                           Sec-WebSocket-Version: 13
+11/7/2019 4:20:11 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Thu, 11 Jul 2019 08:20:13 GMT
+                           Connection: upgrade
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: YuTjZN2BNnJZTKzOql8+9bircwU=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+11/7/2019 4:23:12 PM|Trace|WebSocket.close:0|Begin closing the connection.
+11/7/2019 4:23:12 PM|Info |WebSocket.close:0|Closing the connection has already been done.
+11/7/2019 4:23:12 PM|Debug|WebSocket.closeHandshake:0|Was clean?: True
+                             sent: True
+                             received: True
+11/7/2019 4:23:12 PM|Trace|WebSocket.close:0|End closing the connection.
+11/7/2019 4:23:12 PM|Trace|WebSocket.close:0|Begin closing the connection.
+11/7/2019 4:23:13 PM|Info |WebSocket.close:0|Closing the connection has already been done.
+11/7/2019 4:23:13 PM|Debug|WebSocket.closeHandshake:0|Was clean?: True
+                             sent: True
+                             received: True
+11/7/2019 4:23:13 PM|Trace|WebSocket.close:0|End closing the connection.
+11/7/2019 4:23:42 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: testnet.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: aVWeP+KZc7l4qYoV5L+p6A==
+                           Sec-WebSocket-Version: 13
+11/7/2019 4:23:43 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Thu, 11 Jul 2019 08:23:44 GMT
+                           Connection: upgrade
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: nG8HWGancyEs2YU88tm2llzFh5Y=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+11/7/2019 4:23:43 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: testnet.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: aVWeP+KZc7l4qYoV5L+p6A==
+                           Sec-WebSocket-Version: 13
+11/7/2019 4:23:43 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Thu, 11 Jul 2019 08:23:45 GMT
+                           Connection: upgrade
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: nG8HWGancyEs2YU88tm2llzFh5Y=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
