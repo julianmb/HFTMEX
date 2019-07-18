@@ -1003,18 +1003,18 @@
             this.lblBalanceAndTime.AutoSize = true;
             this.lblBalanceAndTime.Location = new System.Drawing.Point(4, 528);
             this.lblBalanceAndTime.Name = "lblBalanceAndTime";
-            this.lblBalanceAndTime.Size = new System.Drawing.Size(83, 19);
+            this.lblBalanceAndTime.Size = new System.Drawing.Size(113, 19);
             this.lblBalanceAndTime.TabIndex = 22;
-            this.lblBalanceAndTime.Text = "metroLabel2";
+            this.lblBalanceAndTime.Text = "Balance and Time";
             // 
             // lblNetworkAndVersion
             // 
             this.lblNetworkAndVersion.AutoSize = true;
-            this.lblNetworkAndVersion.Location = new System.Drawing.Point(755, 528);
+            this.lblNetworkAndVersion.Location = new System.Drawing.Point(724, 528);
             this.lblNetworkAndVersion.Name = "lblNetworkAndVersion";
-            this.lblNetworkAndVersion.Size = new System.Drawing.Size(83, 19);
+            this.lblNetworkAndVersion.Size = new System.Drawing.Size(129, 19);
             this.lblNetworkAndVersion.TabIndex = 23;
-            this.lblNetworkAndVersion.Text = "metroLabel2";
+            this.lblNetworkAndVersion.Text = "Network and version";
             this.lblNetworkAndVersion.UseStyleColors = true;
             this.lblNetworkAndVersion.Click += new System.EventHandler(this.lblNetworkAndVersion_Click);
             // 
