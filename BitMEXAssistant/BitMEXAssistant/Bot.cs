@@ -2928,7 +2928,6 @@ namespace HFTMEX
             webSocket.OnLevel2UpdateReceived += (sender, e) =>
             {
                 UpdateCBOB(e);
-                ProcessCB();
             };
 
             webSocket.Start(productTypes, channels);
@@ -3938,9 +3937,8 @@ namespace HFTMEX
 
         private void TmrUpdateBook_Tick(object sender, EventArgs e)
         {
-
-            LoadCoinbase();
-            DisplayOB();
+            if (CB_Asks != null)
+                ProcessCB();
         }
 
         private void DisplayOB()
