@@ -32,6 +32,9 @@ namespace HFTMEX
         #region Brait
         decimal lastprice = 0;
         private decimal bmlastprice;
+
+        List<decimal[]> CB_Bids;
+        List<decimal[]> CB_Asks;
         #endregion
 
         #region Class Properties
@@ -2919,29 +2922,50 @@ namespace HFTMEX
             //};
             webSocket.OnSnapShotReceived += (sender, e) =>
             {
-                ShowPBSats(e);
+                ProcessSnapShot(e);
             };
+
+            webSocket.OnLevel2UpdateReceived += (sender, e) =>
+            {
+                UpdateCBOB(e);
+                ProcessCB();
+            };
+
             webSocket.Start(productTypes, channels);
-            //webSocket.Stop();
+
+        }
+
+        private void UpdateCBOB(WebfeedEventArgs<Level2> e)
+        {
+            e.LastOrder.Changes.Count.ToString();
+        }
+
+        private void ProcessSnapShot(WebfeedEventArgs<Snapshot> ea)
+        {
+
+            CB_Bids = ea.LastOrder.Bids;
+            CB_Asks = ea.LastOrder.Asks;
+
             
         }
+
         private static void WebSocket_OnHeartbeatReceived(object sender, WebfeedEventArgs<Heartbeat> e)
         {
             throw new NotImplementedException();
         }
-        private  void ShowPBSats(WebfeedEventArgs<Snapshot> ea)
+        private  void ProcessCB()
         {
-            var task = ea.LastOrder.Asks[0];
-            var tbid = ea.LastOrder.Bids[0];
+            var tbid = CB_Bids[0];
+            var task = CB_Asks[0];
+            
             decimal dtask = task[0];
             decimal dtbid = tbid[0];
 
             decimal tbuy = 0;
             decimal tsell = 0;
-
             decimal oblimit = 10;
 
-            foreach (var bid in ea.LastOrder.Bids)
+            foreach (var bid in CB_Bids)
             {
                 if (oblimit < (dtbid - bid[0]))
                     break;
@@ -2950,7 +2974,7 @@ namespace HFTMEX
 
                 //Console.WriteLine($"Price = {bid[0]} and Size = {bid[1]}");
             }
-            foreach (var ask in ea.LastOrder.Asks)
+            foreach (var ask in CB_Asks)
             {
                 if (-oblimit > (dtask - ask[0]))
                     break;
@@ -2960,33 +2984,43 @@ namespace HFTMEX
                 //Console.WriteLine($"Price = {bid[0]} and Size = {bid[1]}");
             }
 
-            
+
             decimal curprice = average(dtask, dtbid);
             decimal dif = (curprice - lastprice);
-            decimal ratio = tbuy / tsell;
-            decimal spread = nudCurrentPrice.Value - curprice;
+            decimal ratio;
+            if (tbuy > tsell)
+                ratio = tbuy / tsell;
+            else
+                ratio = -(tsell / tbuy);
+            decimal spread = curprice - nudCurrentPrice.Value;
             decimal bmdif = (nudCurrentPrice.Value - bmlastprice);
 
             // Price, tbuy, tsell, ratio, diff, spread, bitmex, bitmexdiff
             string[] row = { curprice.ToString("0.##"), tbuy.ToString("0.##"), tsell.ToString("0.##"), ratio.ToString("0.##"), dif.ToString("0.##"), spread.ToString("0.##"),nudCurrentPrice.Value.ToString("0.##"), bmdif.ToString("0.##") };
+            //string rowstr = "PCB: " + row[0] + " TB: " + row[1] + " TS: " + row[2] + " Ratio: " + row[3] + " Diff: " + row[4] + " Spread: " + row[5] + " BP: " + row[6] + " BDF: " + row[7]; 
             var lvi = new ListViewItem(row);
             if(dif>3 || dif < -3)
                 lvi = markbold(lvi, 4);
-            if(ratio > 3 || ratio < 0.3M)
+            if(ratio > 2 || ratio < -2)
                 lvi = markbold(lvi, 3);
             if (spread > 10 || spread < -10)
                 lvi = markbold(lvi, 5);
             if (bmdif > 3 || bmdif < -3)
                 lvi = markbold(lvi, 7);
 
+            
             this.BeginInvoke((System.Windows.Forms.MethodInvoker)delegate ()
             {
                        
                 mlBuy.Text = tbuy.ToString();
                 mlSell.Text = tsell.ToString();
-                                    
-                    lvOrders.Items.Add(lvi);
-                    // webSocket.Stop();
+
+                lvOrders.Items.Add(lvi);
+                if (lvOrders.Items.Count > 34)
+                    lvOrders.Items.RemoveAt(0);
+                lvOrders.Items[lvOrders.Items.Count - 1].EnsureVisible();
+                //lbCoinBase.Items.Add(rowstr);
+                // webSocket.Stop();
             });
             lastprice = curprice;
             bmlastprice = nudCurrentPrice.Value;
@@ -3094,7 +3128,7 @@ namespace HFTMEX
             LimitNowBuyOrders.Clear();
             */
             //bitmex.CancelOrder(LimitNowBuyOrderId);
-            chkLimitNowBuyContinue.Checked = false;
+            //chkLimitNowBuyContinue.Checked = false;
             Log("Cancel Buy button clicked");
             LimitNowStopBuying();
         }
@@ -3124,7 +3158,7 @@ namespace HFTMEX
             LimitNowSellOrders.Clear();
             */
             //bitmex.CancelOrder(LimitNowSellOrderId);
-            chkLimitNowSellContinue.Checked = false;
+            //chkLimitNowSellContinue.Checked = false;
             Log("Cancel Sell button clicked");
             LimitNowStopSelling();
         }
@@ -3893,19 +3927,25 @@ namespace HFTMEX
 
         private void BtnStart_Click(object sender, EventArgs e)
         {
-            //LoadCoinbase();
+            LoadCoinbase();
             tmrUpdateBook.Start();
         }
 
         private void BtnStop_Click(object sender, EventArgs e)
         {
-            tmrUpdateBook.Start();
+            
         }
 
         private void TmrUpdateBook_Tick(object sender, EventArgs e)
         {
 
             LoadCoinbase();
+            DisplayOB();
+        }
+
+        private void DisplayOB()
+        {
+            throw new NotImplementedException();
         }
     }
 

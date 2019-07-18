@@ -245,6 +245,7 @@
             this.chDifPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chBitmex = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lbCoinBase = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudPositionLimitPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPositionMargin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCurrentPrice)).BeginInit();
@@ -2162,6 +2163,7 @@
             // 
             // tabLimitNow
             // 
+            this.tabLimitNow.Controls.Add(this.lbCoinBase);
             this.tabLimitNow.Controls.Add(this.gbCoinbase);
             this.tabLimitNow.Controls.Add(this.groupBox10);
             this.tabLimitNow.Controls.Add(this.label31);
@@ -2187,9 +2189,9 @@
             this.gbCoinbase.Controls.Add(this.mlSell);
             this.gbCoinbase.Controls.Add(this.btnStop);
             this.gbCoinbase.Controls.Add(this.btnStart);
-            this.gbCoinbase.Location = new System.Drawing.Point(630, 231);
+            this.gbCoinbase.Location = new System.Drawing.Point(7, 231);
             this.gbCoinbase.Name = "gbCoinbase";
-            this.gbCoinbase.Size = new System.Drawing.Size(211, 111);
+            this.gbCoinbase.Size = new System.Drawing.Size(442, 111);
             this.gbCoinbase.TabIndex = 34;
             this.gbCoinbase.TabStop = false;
             this.gbCoinbase.Text = "Coinbase Orderbook";
@@ -2457,6 +2459,8 @@
             // chkLimitNowSellContinue
             // 
             this.chkLimitNowSellContinue.AutoSize = true;
+            this.chkLimitNowSellContinue.Checked = true;
+            this.chkLimitNowSellContinue.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkLimitNowSellContinue.Location = new System.Drawing.Point(6, 187);
             this.chkLimitNowSellContinue.Name = "chkLimitNowSellContinue";
             this.chkLimitNowSellContinue.Size = new System.Drawing.Size(136, 15);
@@ -2775,6 +2779,8 @@
             // chkLimitNowBuyContinue
             // 
             this.chkLimitNowBuyContinue.AutoSize = true;
+            this.chkLimitNowBuyContinue.Checked = true;
+            this.chkLimitNowBuyContinue.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkLimitNowBuyContinue.Location = new System.Drawing.Point(5, 187);
             this.chkLimitNowBuyContinue.Name = "chkLimitNowBuyContinue";
             this.chkLimitNowBuyContinue.Size = new System.Drawing.Size(138, 15);
@@ -3506,6 +3512,14 @@
             // 
             this.columnHeader1.Text = "BM Dif";
             // 
+            // lbCoinBase
+            // 
+            this.lbCoinBase.FormattingEnabled = true;
+            this.lbCoinBase.Location = new System.Drawing.Point(458, 233);
+            this.lbCoinBase.Name = "lbCoinBase";
+            this.lbCoinBase.Size = new System.Drawing.Size(391, 108);
+            this.lbCoinBase.TabIndex = 35;
+            // 
             // Bot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3835,5 +3849,6 @@
         private System.Windows.Forms.ColumnHeader chDifPrice;
         private System.Windows.Forms.ColumnHeader chBitmex;
         private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ListBox lbCoinBase;
     }
 }
