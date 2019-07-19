@@ -146,8 +146,8 @@
             this.btnSpreadPlaceOrders = new MetroFramework.Controls.MetroButton();
             this.tabLimitNow = new MetroFramework.Controls.MetroTabPage();
             this.gbCoinbase = new System.Windows.Forms.GroupBox();
-            this.mlBuy = new MetroFramework.Controls.MetroLabel();
-            this.mlSell = new MetroFramework.Controls.MetroLabel();
+            this.mlAsk = new MetroFramework.Controls.MetroLabel();
+            this.mlBid = new MetroFramework.Controls.MetroLabel();
             this.btnStop = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
@@ -246,6 +246,7 @@
             this.chBitmex = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lbCoinBase = new System.Windows.Forms.ListBox();
+            this.mlPrice = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.nudPositionLimitPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPositionMargin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCurrentPrice)).BeginInit();
@@ -2185,8 +2186,9 @@
             // gbCoinbase
             // 
             this.gbCoinbase.BackColor = System.Drawing.Color.Transparent;
-            this.gbCoinbase.Controls.Add(this.mlBuy);
-            this.gbCoinbase.Controls.Add(this.mlSell);
+            this.gbCoinbase.Controls.Add(this.mlPrice);
+            this.gbCoinbase.Controls.Add(this.mlAsk);
+            this.gbCoinbase.Controls.Add(this.mlBid);
             this.gbCoinbase.Controls.Add(this.btnStop);
             this.gbCoinbase.Controls.Add(this.btnStart);
             this.gbCoinbase.Location = new System.Drawing.Point(7, 231);
@@ -2195,24 +2197,25 @@
             this.gbCoinbase.TabIndex = 34;
             this.gbCoinbase.TabStop = false;
             this.gbCoinbase.Text = "Coinbase Orderbook";
+            this.gbCoinbase.Enter += new System.EventHandler(this.GbCoinbase_Enter);
             // 
-            // mlBuy
+            // mlAsk
             // 
-            this.mlBuy.AutoSize = true;
-            this.mlBuy.Location = new System.Drawing.Point(108, 29);
-            this.mlBuy.Name = "mlBuy";
-            this.mlBuy.Size = new System.Drawing.Size(16, 19);
-            this.mlBuy.TabIndex = 24;
-            this.mlBuy.Text = "0";
+            this.mlAsk.AutoSize = true;
+            this.mlAsk.Location = new System.Drawing.Point(107, 16);
+            this.mlAsk.Name = "mlAsk";
+            this.mlAsk.Size = new System.Drawing.Size(16, 19);
+            this.mlAsk.TabIndex = 24;
+            this.mlAsk.Text = "0";
             // 
-            // mlSell
+            // mlBid
             // 
-            this.mlSell.AutoSize = true;
-            this.mlSell.Location = new System.Drawing.Point(108, 61);
-            this.mlSell.Name = "mlSell";
-            this.mlSell.Size = new System.Drawing.Size(16, 19);
-            this.mlSell.TabIndex = 23;
-            this.mlSell.Text = "0";
+            this.mlBid.AutoSize = true;
+            this.mlBid.Location = new System.Drawing.Point(107, 78);
+            this.mlBid.Name = "mlBid";
+            this.mlBid.Size = new System.Drawing.Size(16, 19);
+            this.mlBid.TabIndex = 23;
+            this.mlBid.Text = "0";
             // 
             // btnStop
             // 
@@ -3520,6 +3523,15 @@
             this.lbCoinBase.Size = new System.Drawing.Size(391, 108);
             this.lbCoinBase.TabIndex = 35;
             // 
+            // mlPrice
+            // 
+            this.mlPrice.AutoSize = true;
+            this.mlPrice.Location = new System.Drawing.Point(107, 47);
+            this.mlPrice.Name = "mlPrice";
+            this.mlPrice.Size = new System.Drawing.Size(16, 19);
+            this.mlPrice.TabIndex = 25;
+            this.mlPrice.Text = "0";
+            // 
             // Bot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3837,8 +3849,8 @@
         private MetroFramework.Controls.MetroButton metroButton2;
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Button btnStart;
-        private MetroFramework.Controls.MetroLabel mlBuy;
-        private MetroFramework.Controls.MetroLabel mlSell;
+        private MetroFramework.Controls.MetroLabel mlAsk;
+        private MetroFramework.Controls.MetroLabel mlBid;
         private System.Windows.Forms.Timer tmrUpdateBook;
         private System.Windows.Forms.ListView lvOrders;
         private System.Windows.Forms.ColumnHeader chPrice;
@@ -3850,5 +3862,6 @@
         private System.Windows.Forms.ColumnHeader chBitmex;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ListBox lbCoinBase;
+        private MetroFramework.Controls.MetroLabel mlPrice;
     }
 }

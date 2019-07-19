@@ -35,6 +35,10 @@ namespace HFTMEX
 
         List<decimal[]> CB_Bids;
         List<decimal[]> CB_Asks;
+
+        decimal CB_LastBid;
+        decimal CB_LastAsk;
+        private decimal CB_LastPrice;
         #endregion
 
         #region Class Properties
@@ -2906,20 +2910,17 @@ namespace HFTMEX
             CoinbasePro.WebSocket.WebSocket webSocket;
             //use the websocket feed
             var productTypes = new List<ProductType>() { ProductType.BtcUsd };
-            var channels = new List<ChannelType>() { ChannelType.Level2 }; // When not providing any channels, the socket will subscribe to all channels
+            var channels = new List<ChannelType>() { ChannelType.Level2,ChannelType.Ticker }; // When not providing any channels, the socket will subscribe to all channels
             webSocket = cbpc.WebSocket;
 
             // EventHandler for the heartbeat response type
             //webSocket.OnHeartbeatReceived += WebSocket_OnHeartbeatReceived;
 
-            //websocket.ontickerreceived += (sender, e) =>
-            //{
-            //    printbestquotes(e);
-            //};
-            //webSocket.OnLevel2UpdateReceived += (sender, e) =>
-            //{
-            //    PrintL2(e);
-            //};
+            webSocket.OnTickerReceived += (sender, e) =>
+            {
+                SaveBestQuotes(e);
+            };
+
             webSocket.OnSnapShotReceived += (sender, e) =>
             {
                 ProcessSnapShot(e);
@@ -2934,9 +2935,152 @@ namespace HFTMEX
 
         }
 
+        private void SaveBestQuotes(WebfeedEventArgs<Ticker> e)
+        {
+            CB_LastBid = e.LastOrder.BestBid;
+            CB_LastAsk = e.LastOrder.BestAsk;
+            CB_LastPrice = e.LastOrder.Price;
+
+            this.BeginInvoke((System.Windows.Forms.MethodInvoker)delegate ()
+            {
+
+                mlAsk.Text = CB_LastAsk.ToString("0.##");
+                mlBid.Text = CB_LastBid.ToString("0.##");
+                mlPrice.Text = CB_LastPrice.ToString("0.##"); ;
+            });
+
+        }
+
         private void UpdateCBOB(WebfeedEventArgs<Level2> e)
         {
-            e.LastOrder.Changes.Count.ToString();
+            int index = 0;
+            foreach (var ch in e.LastOrder.Changes)
+            {
+                string direction = ch[0];
+                decimal price = decimal.Parse(ch[1]);
+                decimal value = decimal.Parse(ch[2]);
+                if (direction == "sell") {
+                                        
+                    //Its a delete order?
+                    if (ch[2] == "0")
+                    {
+                        //We pass if we didnt found it
+                        if (index == CB_Asks.Count)
+                            continue;
+                        //CB_Asks.RemoveAt(index);
+                    }
+                    //Its a change
+                    else
+                    {
+                        index = ReturnOBIndex(price, direction);
+                        if(index == CB_Asks.Count)
+                        {
+                            //Didnt find it, so lets add it
+                            //Where is the best place to add it ?
+                            index = findplacetoadd(price, direction);
+
+                            decimal[] item = { price, value };
+                            CB_Asks.Insert(index, item);
+                            continue;
+                        }
+                        //Its an update
+                        else
+                        {
+                            //We found it it
+                            CB_Asks[index][1] = value;
+                        }
+                    }
+                }
+                else
+                {
+                    //Its a delete order?
+                    if (ch[2] == "0")
+                    {
+                        //We pass if we didnt found it
+                        if (index == CB_Bids.Count)
+                            continue;
+                        CB_Bids.RemoveAt(index);
+                    }
+                    //Its a change
+                    else
+                    {
+                        index = ReturnOBIndex(price, direction);
+                        if (index == CB_Bids.Count)
+                        {
+                            //Didnt find it, so lets add it
+                            //Where is the best place to add it ?
+                            index = findplacetoadd(price, direction);
+
+                            decimal[] item = { price, value };
+                            CB_Bids.Insert(index, item);
+                            continue;
+                        }
+                        //Its an update
+                        else
+                        {
+                            //We found it it
+                            CB_Bids[index][1] = value;
+                        }
+                    }
+                }
+
+            }
+            //e.LastOrder.Changes.Count.ToString();
+        }
+
+
+        private int ReturnOBIndex(decimal dlevel, string side)
+        {
+            int index = 0;
+            
+            if (side == "sell") { 
+                foreach(var row in CB_Asks)
+                {
+                    if (row[0] == dlevel)
+                    {
+                        return index;
+                    }                  
+                    index++;
+                }
+            }
+            else
+            {
+                foreach (var row in CB_Bids)
+                {
+                    if (row[0] == dlevel)
+                    {
+                        return index;
+                    }
+                    index++;
+                }
+            }
+
+            return index;
+
+        }
+        private int findplacetoadd(decimal level, string side)
+        {
+            int ilevel = 0;
+            if (side == "sell")
+            {
+                foreach(var row in CB_Asks)
+                {
+                    if (row[0] > level)
+                        return ilevel;
+                    ilevel++;
+                }
+            }
+            else
+            {
+                foreach (var row in CB_Bids)
+                {
+                    if (row[0] < level)
+                        return ilevel;
+                    ilevel++;
+                }
+            }
+            return ilevel;
+
         }
 
         private void ProcessSnapShot(WebfeedEventArgs<Snapshot> ea)
@@ -2954,11 +3098,9 @@ namespace HFTMEX
         }
         private  void ProcessCB()
         {
-            var tbid = CB_Bids[0];
-            var task = CB_Asks[0];
-            
-            decimal dtask = task[0];
-            decimal dtbid = tbid[0];
+
+            decimal dtask = CB_LastAsk;
+            decimal dtbid = CB_LastBid;
 
             decimal tbuy = 0;
             decimal tsell = 0;
@@ -2987,22 +3129,25 @@ namespace HFTMEX
             decimal curprice = average(dtask, dtbid);
             decimal dif = (curprice - lastprice);
             decimal ratio;
-            if (tbuy > tsell)
-                ratio = tbuy / tsell;
-            else
-                ratio = -(tsell / tbuy);
+            //if (tbuy > tsell)
+            //    ratio = tbuy / tsell;
+            //else
+            //    ratio = -(tsell / tbuy);
+            ratio = 0;
             decimal spread = curprice - nudCurrentPrice.Value;
+            decimal perspread = (spread / curprice ) * 100;
+
             decimal bmdif = (nudCurrentPrice.Value - bmlastprice);
 
             // Price, tbuy, tsell, ratio, diff, spread, bitmex, bitmexdiff
-            string[] row = { curprice.ToString("0.##"), tbuy.ToString("0.##"), tsell.ToString("0.##"), ratio.ToString("0.##"), dif.ToString("0.##"), spread.ToString("0.##"),nudCurrentPrice.Value.ToString("0.##"), bmdif.ToString("0.##") };
+            string[] row = { curprice.ToString("0.##"), tbuy.ToString("0.##"), tsell.ToString("0.##"), ratio.ToString("0.##"), dif.ToString("0.##"), perspread.ToString("0.####"),nudCurrentPrice.Value.ToString("0.##"), bmdif.ToString("0.##") };
             //string rowstr = "PCB: " + row[0] + " TB: " + row[1] + " TS: " + row[2] + " Ratio: " + row[3] + " Diff: " + row[4] + " Spread: " + row[5] + " BP: " + row[6] + " BDF: " + row[7]; 
             var lvi = new ListViewItem(row);
             if(dif>3 || dif < -3)
                 lvi = markbold(lvi, 4);
             if(ratio > 2 || ratio < -2)
                 lvi = markbold(lvi, 3);
-            if (spread > 10 || spread < -10)
+            if (perspread > 0.1M || perspread < -0.1M)
                 lvi = markbold(lvi, 5);
             if (bmdif > 3 || bmdif < -3)
                 lvi = markbold(lvi, 7);
@@ -3011,8 +3156,8 @@ namespace HFTMEX
             this.BeginInvoke((System.Windows.Forms.MethodInvoker)delegate ()
             {
                        
-                mlBuy.Text = tbuy.ToString();
-                mlSell.Text = tsell.ToString();
+                //mlAsk.Text = tbuy.ToString();
+                //mlBid.Text = tsell.ToString();
 
                 lvOrders.Items.Add(lvi);
                 if (lvOrders.Items.Count > 34)
@@ -3020,6 +3165,7 @@ namespace HFTMEX
                 lvOrders.Items[lvOrders.Items.Count - 1].EnsureVisible();
                 //lbCoinBase.Items.Add(rowstr);
                 // webSocket.Stop();
+
             });
             lastprice = curprice;
             bmlastprice = nudCurrentPrice.Value;
@@ -3932,7 +4078,7 @@ namespace HFTMEX
 
         private void BtnStop_Click(object sender, EventArgs e)
         {
-            
+            tmrUpdateBook.Stop();
         }
 
         private void TmrUpdateBook_Tick(object sender, EventArgs e)
@@ -3944,6 +4090,11 @@ namespace HFTMEX
         private void DisplayOB()
         {
             throw new NotImplementedException();
+        }
+
+        private void GbCoinbase_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 
