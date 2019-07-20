@@ -145,7 +145,9 @@
             this.nudSpreadBuyContractsEach = new System.Windows.Forms.NumericUpDown();
             this.btnSpreadPlaceOrders = new MetroFramework.Controls.MetroButton();
             this.tabLimitNow = new MetroFramework.Controls.MetroTabPage();
+            this.lbCoinBase = new System.Windows.Forms.ListBox();
             this.gbCoinbase = new System.Windows.Forms.GroupBox();
+            this.mlPrice = new MetroFramework.Controls.MetroLabel();
             this.mlAsk = new MetroFramework.Controls.MetroLabel();
             this.mlBid = new MetroFramework.Controls.MetroLabel();
             this.btnStop = new System.Windows.Forms.Button();
@@ -245,8 +247,7 @@
             this.chDifPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chBitmex = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lbCoinBase = new System.Windows.Forms.ListBox();
-            this.mlPrice = new MetroFramework.Controls.MetroLabel();
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.nudPositionLimitPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPositionMargin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCurrentPrice)).BeginInit();
@@ -2183,6 +2184,14 @@
             this.tabLimitNow.VerticalScrollbarHighlightOnWheel = false;
             this.tabLimitNow.VerticalScrollbarSize = 10;
             // 
+            // lbCoinBase
+            // 
+            this.lbCoinBase.FormattingEnabled = true;
+            this.lbCoinBase.Location = new System.Drawing.Point(458, 233);
+            this.lbCoinBase.Name = "lbCoinBase";
+            this.lbCoinBase.Size = new System.Drawing.Size(391, 108);
+            this.lbCoinBase.TabIndex = 35;
+            // 
             // gbCoinbase
             // 
             this.gbCoinbase.BackColor = System.Drawing.Color.Transparent;
@@ -2198,6 +2207,15 @@
             this.gbCoinbase.TabStop = false;
             this.gbCoinbase.Text = "Coinbase Orderbook";
             this.gbCoinbase.Enter += new System.EventHandler(this.GbCoinbase_Enter);
+            // 
+            // mlPrice
+            // 
+            this.mlPrice.AutoSize = true;
+            this.mlPrice.Location = new System.Drawing.Point(107, 47);
+            this.mlPrice.Name = "mlPrice";
+            this.mlPrice.Size = new System.Drawing.Size(16, 19);
+            this.mlPrice.TabIndex = 25;
+            this.mlPrice.Text = "0";
             // 
             // mlAsk
             // 
@@ -3473,7 +3491,8 @@
             this.chDiff,
             this.chDifPrice,
             this.chBitmex,
-            this.columnHeader1});
+            this.columnHeader1,
+            this.columnHeader2});
             this.lvOrders.HoverSelection = true;
             this.lvOrders.Location = new System.Drawing.Point(863, 34);
             this.lvOrders.MultiSelect = false;
@@ -3515,22 +3534,9 @@
             // 
             this.columnHeader1.Text = "BM Dif";
             // 
-            // lbCoinBase
+            // columnHeader2
             // 
-            this.lbCoinBase.FormattingEnabled = true;
-            this.lbCoinBase.Location = new System.Drawing.Point(458, 233);
-            this.lbCoinBase.Name = "lbCoinBase";
-            this.lbCoinBase.Size = new System.Drawing.Size(391, 108);
-            this.lbCoinBase.TabIndex = 35;
-            // 
-            // mlPrice
-            // 
-            this.mlPrice.AutoSize = true;
-            this.mlPrice.Location = new System.Drawing.Point(107, 47);
-            this.mlPrice.Name = "mlPrice";
-            this.mlPrice.Size = new System.Drawing.Size(16, 19);
-            this.mlPrice.TabIndex = 25;
-            this.mlPrice.Text = "0";
+            this.columnHeader2.Text = "Signal";
             // 
             // Bot
             // 
@@ -3863,5 +3869,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ListBox lbCoinBase;
         private MetroFramework.Controls.MetroLabel mlPrice;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
     }
 }

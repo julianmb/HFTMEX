@@ -5626,3 +5626,735 @@
                              sent: True
                              received: True
 19/7/2019 7:06:26 PM|Trace|WebSocket.close:0|End closing the connection.
+20/7/2019 1:23:24 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: www.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: G1/a7HkcOhg+vOMAPVUVkg==
+                           Sec-WebSocket-Version: 13
+20/7/2019 1:23:25 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Sat, 20 Jul 2019 05:23:26 GMT
+                           Connection: upgrade
+                           Set-Cookie: AWSALB=bJoA0kdbraXOIm1XzjhjzcM0aVHgr5z0RWxwVAcs6hAgMlBbmdW+i9K1kN4splmYbzTNpLf0IA96DWtSUx0cokLKcJaxZ9OrIavv7t96C46SsJutJf4Sn+iqhyo9; Expires=Sat, 27 Jul 2019 05:23:26 GMT; Path=/
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: sba6S5gd6m5QHVZYO/33IdJAXFI=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+20/7/2019 1:23:25 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: www.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: G1/a7HkcOhg+vOMAPVUVkg==
+                           Sec-WebSocket-Version: 13
+20/7/2019 1:23:25 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Sat, 20 Jul 2019 05:23:27 GMT
+                           Connection: upgrade
+                           Set-Cookie: AWSALB=LihKm720Chl32sOlKth7QF44DVQp7hm9BUMf1SnjXcFTBXKdhr6YGX489UGzg3VbKMn9axlD8JiDqJ/YtzgRALrhbPhtekHW1Fvq1H597I+ziwcm0QfEVn8WGyRp; Expires=Sat, 27 Jul 2019 05:23:27 GMT; Path=/
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: sba6S5gd6m5QHVZYO/33IdJAXFI=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+20/7/2019 1:24:30 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: www.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: Q5xfkiimsgU8vphMK+XT5A==
+                           Sec-WebSocket-Version: 13
+20/7/2019 1:24:31 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Sat, 20 Jul 2019 05:24:32 GMT
+                           Connection: upgrade
+                           Set-Cookie: AWSALB=dTjidjCJz9k0OkqJG34YtLZeK4uUDqLMc3V3efgiKlJYsUHsFHYIU+boShmuFOMGFCoOVgUCOmPjbATgEpqtCEZ6WfvxZVtzRtKVUA9vR1C+KGT+9Km1AdoDFI6t; Expires=Sat, 27 Jul 2019 05:24:32 GMT; Path=/
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: ebO/4kF/qCNTdZHqoCukPzxHOPw=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+20/7/2019 1:24:31 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: www.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: Q5xfkiimsgU8vphMK+XT5A==
+                           Sec-WebSocket-Version: 13
+20/7/2019 1:24:32 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Sat, 20 Jul 2019 05:24:33 GMT
+                           Connection: upgrade
+                           Set-Cookie: AWSALB=gG5i5VbQnr8RAmmL0N/z1pDbNXLKfBkUujICGi3RcNpY8n2wnJHR6CSwnCeXHSXbog4bSndU0yHV4nFEPaDhXVcxP9TbWKQws6Dr458KBGwjL22A0koIghePZlgW; Expires=Sat, 27 Jul 2019 05:24:33 GMT; Path=/
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: ebO/4kF/qCNTdZHqoCukPzxHOPw=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+20/7/2019 1:30:38 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: www.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: /4lAsnxhQ8Qr7nRjOZUtzA==
+                           Sec-WebSocket-Version: 13
+20/7/2019 1:30:38 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Sat, 20 Jul 2019 05:30:39 GMT
+                           Connection: upgrade
+                           Set-Cookie: AWSALB=Sbpw/hHc39qtMYLJzwqo3grJhRn5hP1JkHa6DztfwUGYUuiYLl1bbx3jfE23YAx9QhKQzrLomOUG5oOlccvFz1WkmRrjnu6c/NYjPoBsbW2imanQ9rUNSwFLzkSK; Expires=Sat, 27 Jul 2019 05:30:39 GMT; Path=/
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: 8ZTLvs0N0Gf6KLFHYxFgKmI02N4=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+20/7/2019 1:30:38 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: www.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: /4lAsnxhQ8Qr7nRjOZUtzA==
+                           Sec-WebSocket-Version: 13
+20/7/2019 1:30:39 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Sat, 20 Jul 2019 05:30:40 GMT
+                           Connection: upgrade
+                           Set-Cookie: AWSALB=QQrHcylLQ7Q6ZsgUcth/y0froUxBc+jrIdfi+ZkdQYhS14Tq05isz2T0Ryu2+IstZBvLQ3C/6aGnO2w7autIXig9SzozzBCbQx0zaLVz9bTuIYLwfesBcqeGtU/l; Expires=Sat, 27 Jul 2019 05:30:40 GMT; Path=/
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: 8ZTLvs0N0Gf6KLFHYxFgKmI02N4=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+20/7/2019 4:20:43 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: www.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: Md9vz2X0jgQqkuMoXM0dcw==
+                           Sec-WebSocket-Version: 13
+20/7/2019 4:20:43 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Sat, 20 Jul 2019 08:20:45 GMT
+                           Connection: upgrade
+                           Set-Cookie: AWSALB=00rU9b7FHCsDNZ7W7zAuabszLEUWraMTLaLQrj4ew6EihzIEdapmBWBFTXi/T8iAmNdkHmok6b7GPX3VCfZCHlfj1/tmlJwNk8eok3mUI3+pgNl47LXx8B3jrtYf; Expires=Sat, 27 Jul 2019 08:20:45 GMT; Path=/
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: fYHH2ezMODQSpvZ1Vzpc6ss15Fk=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+20/7/2019 4:20:43 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: www.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: Md9vz2X0jgQqkuMoXM0dcw==
+                           Sec-WebSocket-Version: 13
+20/7/2019 4:20:44 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Sat, 20 Jul 2019 08:20:45 GMT
+                           Connection: upgrade
+                           Set-Cookie: AWSALB=5zx43qpouHHGfX9+5IU3KMYFn59VUGg/rMrfIm0NeFHUxelFhEdQ0z3VRDVupTeIiR5/xmlXRiolYjlKyYQt/3+iCtROlhURl2hgYIwELeMYGCAdtls0Pu99UHGj; Expires=Sat, 27 Jul 2019 08:20:45 GMT; Path=/
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: fYHH2ezMODQSpvZ1Vzpc6ss15Fk=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+20/7/2019 4:25:19 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: www.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: yJVnaQsRHNIidj5CkGR9zw==
+                           Sec-WebSocket-Version: 13
+20/7/2019 4:25:20 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Sat, 20 Jul 2019 08:25:21 GMT
+                           Connection: upgrade
+                           Set-Cookie: AWSALB=Y0hq/HYhFG/QHo/HMVNJdyIIQggsj4/iltZm/cQgRNDc9iCjmzEERVa0O9SCUTALbYoFkG490QRJd4ZiIS9Mg09stm9Tm/5Gat/7ZWBHRI2nBpX60jVPMX2ZKjnX; Expires=Sat, 27 Jul 2019 08:25:21 GMT; Path=/
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: QLSLV9MtKmyWwDMWm7AkXIO6EgA=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+20/7/2019 4:25:20 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: www.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: yJVnaQsRHNIidj5CkGR9zw==
+                           Sec-WebSocket-Version: 13
+20/7/2019 4:25:20 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Sat, 20 Jul 2019 08:25:22 GMT
+                           Connection: upgrade
+                           Set-Cookie: AWSALB=fNCLKT5Gyv0V3WdJAFSTT66ZiNq1bFqkPBpAX0UwMPe6ZQkBuqxtwmvkzQ4HbmmdVdWRb5XN/j04TXuJzzRJFCwLg60N95cy339j+a4CnCYuEdkszk4P4YnnVgZh; Expires=Sat, 27 Jul 2019 08:25:22 GMT; Path=/
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: QLSLV9MtKmyWwDMWm7AkXIO6EgA=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+20/7/2019 4:35:41 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: www.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: b1k9KkJLbpdByipgMCUXtw==
+                           Sec-WebSocket-Version: 13
+20/7/2019 4:35:41 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Sat, 20 Jul 2019 08:35:43 GMT
+                           Connection: upgrade
+                           Set-Cookie: AWSALB=+6LIzdiox0aeYTZPxCSQGBbQ3Jmw3qTXhVUGtjeygdSXuKPNElng3A3+HqVtRle/ve5oy+ju/bRc03ol2PJxztpoWYt1vuRSAUOJVgceUXjvIk9t9oMEzvmaXKNv; Expires=Sat, 27 Jul 2019 08:35:43 GMT; Path=/
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: z5NzhWBngYKUC4g4u4UBP+iHQ9w=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+20/7/2019 4:35:42 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: www.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: b1k9KkJLbpdByipgMCUXtw==
+                           Sec-WebSocket-Version: 13
+20/7/2019 4:35:42 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Sat, 20 Jul 2019 08:35:44 GMT
+                           Connection: upgrade
+                           Set-Cookie: AWSALB=Yo4ZhqfVPQRfNibax1KOBBwgkFtY+RDqmihlBAkvHfnZUqhkHH0ZqjDq4kigLeAFbOMjISSpukA9bepV84HvM7I9qcoTdLD9HOSCdRCqH1Ce7HNNJYmqiuad7qDc; Expires=Sat, 27 Jul 2019 08:35:44 GMT; Path=/
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: z5NzhWBngYKUC4g4u4UBP+iHQ9w=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+20/7/2019 4:46:34 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: www.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: 1TLJXhgTIGWfZSTy33SVSQ==
+                           Sec-WebSocket-Version: 13
+20/7/2019 4:46:34 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Sat, 20 Jul 2019 08:46:35 GMT
+                           Connection: upgrade
+                           Set-Cookie: AWSALB=nMOAZ0KYL51Nd6cqRJPNolqk+haXRu3VVJunb18PekAgXKvce4Jyr3NitBzzdLx2SNLkGoYQWayYnSWmAMty0geVJpU5rU3YZM4FPzaM73tHYPyfsJEgiEkcvH+y; Expires=Sat, 27 Jul 2019 08:46:35 GMT; Path=/
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: Pi3kevtIlnZ7fgbqxvFr2jah+Gc=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+20/7/2019 4:46:34 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: www.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: 1TLJXhgTIGWfZSTy33SVSQ==
+                           Sec-WebSocket-Version: 13
+20/7/2019 4:46:35 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Sat, 20 Jul 2019 08:46:36 GMT
+                           Connection: upgrade
+                           Set-Cookie: AWSALB=Pmilh5/e9pzaBR5nluSwh2c9BseU65fKL/c3Zpe7uqZvL2rgpDsjf3HNIRsNbY/VyF1taUf9u1hwp2aoX02m/pjV74CqYM76Tv9pzkWhj7irV2V1wjzNB6BWcHeF; Expires=Sat, 27 Jul 2019 08:46:36 GMT; Path=/
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: Pi3kevtIlnZ7fgbqxvFr2jah+Gc=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+20/7/2019 4:49:04 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: www.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: DJfxR5nOUVCBM47H/y0YAA==
+                           Sec-WebSocket-Version: 13
+20/7/2019 4:49:04 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Sat, 20 Jul 2019 08:49:06 GMT
+                           Connection: upgrade
+                           Set-Cookie: AWSALB=vw44QwunsGZom+yvhOVU2JfB9+CAJciS7rdH2+879vxkXplVk4AlPeVIhc+Syr9k0PBq6LkH5yz0nCQ5M1WbKayef79AE830suluBmjiV/e5XUjBSA9RbwZYHtbL; Expires=Sat, 27 Jul 2019 08:49:06 GMT; Path=/
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: 9zYgr2cUCTHpqnbYhZUlR++GBMg=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+20/7/2019 4:49:04 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: www.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: DJfxR5nOUVCBM47H/y0YAA==
+                           Sec-WebSocket-Version: 13
+20/7/2019 4:49:05 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Sat, 20 Jul 2019 08:49:06 GMT
+                           Connection: upgrade
+                           Set-Cookie: AWSALB=dvP2f7Mtzact46F6HGRCPxjOoAY2N4+1fX/qbirQZz1HnhK7pEICHp5PCHCmqkWPMCGHPD4uWEgRt7wzIghRwML9ZJtzuhhOQQ1n0esFHX1ODShCbVYIGlnERPfP; Expires=Sat, 27 Jul 2019 08:49:06 GMT; Path=/
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: 9zYgr2cUCTHpqnbYhZUlR++GBMg=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+20/7/2019 4:50:49 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: www.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: ygxhaS/bNHB9vJJscM+3LQ==
+                           Sec-WebSocket-Version: 13
+20/7/2019 4:50:49 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Sat, 20 Jul 2019 08:50:50 GMT
+                           Connection: upgrade
+                           Set-Cookie: AWSALB=Enki09V7Js8tAE35gd8050RUycbFDt6B410LWVT7ceB05oOMV8nmbQT3Zz+zcLzbLuWhKtJ+6x/EDIHdSj8hWEZ/9NI87mwxn4bfxNMBXtI2trmmv70swNs/hFBB; Expires=Sat, 27 Jul 2019 08:50:50 GMT; Path=/
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: KABKKnl4Bd8t8TWdI5De5WCYxpI=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+20/7/2019 4:50:49 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: www.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: ygxhaS/bNHB9vJJscM+3LQ==
+                           Sec-WebSocket-Version: 13
+20/7/2019 4:50:50 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Sat, 20 Jul 2019 08:50:51 GMT
+                           Connection: upgrade
+                           Set-Cookie: AWSALB=sQxAvOev1Qi2FmTqt1lwuTBrdFeq5CdGlwVOYijVxNbglx7fFP7HTgbFzqrcmR7hcRdMU8KGHA9AxxqjyqvmmccinuD28cLGXePGHf1QT4Iyqm6V1iGBzgyHp7ay; Expires=Sat, 27 Jul 2019 08:50:51 GMT; Path=/
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: KABKKnl4Bd8t8TWdI5De5WCYxpI=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+20/7/2019 4:57:29 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: www.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: j7lveKZCl4spO6mzj4CgwA==
+                           Sec-WebSocket-Version: 13
+20/7/2019 4:57:29 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Sat, 20 Jul 2019 08:57:31 GMT
+                           Connection: upgrade
+                           Set-Cookie: AWSALB=QfObx1dcmwUNjs0RG7QvkIA5ixzVikkOBofhPmP8GlqKuBLjT7kIbEAYXP7g1LaCL6zrzAIKg6U/eBaJtu0MNMRbzsID2lwoz907yot0SQ0yqjGHG4TqmwqUK0Xo; Expires=Sat, 27 Jul 2019 08:57:31 GMT; Path=/
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: P6PoXoLyH1U/39UHApf/1zA0B+g=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+20/7/2019 4:57:29 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: www.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: j7lveKZCl4spO6mzj4CgwA==
+                           Sec-WebSocket-Version: 13
+20/7/2019 4:57:30 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Sat, 20 Jul 2019 08:57:31 GMT
+                           Connection: upgrade
+                           Set-Cookie: AWSALB=bBaTNiYnzTnQEhXLanmJBVeeZC7V75Ou1Ia+LlumhWdh3n+1EPibRoUYPQh4iCFNyPVPlYWkUz5yEndCDtSoCq+5fvyyWKjLfdewVh7kEUJUFCR/xmgQnpbdtbxG; Expires=Sat, 27 Jul 2019 08:57:31 GMT; Path=/
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: P6PoXoLyH1U/39UHApf/1zA0B+g=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+20/7/2019 4:58:27 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: www.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: Gy1YkqAxXDj5SCKQMBVKyA==
+                           Sec-WebSocket-Version: 13
+20/7/2019 4:58:27 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Sat, 20 Jul 2019 08:58:29 GMT
+                           Connection: upgrade
+                           Set-Cookie: AWSALB=ccbTEnbt9kHW2kPa3A/lupBVNiHVUeH2s/FJ1IEU0gwpc0gXnQ72yoSDI8S5rpLB1vrQd7yGmyQGasjxmFmoQwS7SYcPnhzsJSHoe+lVyCOIpQL9fW+Ab5sG5DKT; Expires=Sat, 27 Jul 2019 08:58:29 GMT; Path=/
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: 6qtiIp77rOnbzbMk0dtvFmghFxc=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+20/7/2019 4:58:28 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: www.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: Gy1YkqAxXDj5SCKQMBVKyA==
+                           Sec-WebSocket-Version: 13
+20/7/2019 4:58:28 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Sat, 20 Jul 2019 08:58:30 GMT
+                           Connection: upgrade
+                           Set-Cookie: AWSALB=0ax/TRX077w/2i56W80HzCuQbNuoiCEAsqFBsNZh1wgaHgNLq6ugh8KAnRghSGrnZ0NyRbBK2S7dOJusW1ODDRpy0c20I4JyL0Hc1P4eC2p3d5OvQiqnrfYBJya+; Expires=Sat, 27 Jul 2019 08:58:30 GMT; Path=/
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: 6qtiIp77rOnbzbMk0dtvFmghFxc=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+20/7/2019 5:07:06 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: www.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: RP7IrcucMf2jvCKi9TEQeA==
+                           Sec-WebSocket-Version: 13
+20/7/2019 5:07:06 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Sat, 20 Jul 2019 09:07:08 GMT
+                           Connection: upgrade
+                           Set-Cookie: AWSALB=lgHyZQxUFfLkRR+IAPet69wzB10WIh0IP/0iKLGZxC8W1HKoFgFU9k2tceKj+xuEWkSqr3ob2PyMZxi4MnhcnNrY6rCLw7KMAv6PO06Sm8pX70A26GKUlAaTTQ/k; Expires=Sat, 27 Jul 2019 09:07:08 GMT; Path=/
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: 8wEwFf03Sa3Tr/KXkkAe0fqU9QE=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+20/7/2019 5:07:06 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: www.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: RP7IrcucMf2jvCKi9TEQeA==
+                           Sec-WebSocket-Version: 13
+20/7/2019 5:07:07 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Sat, 20 Jul 2019 09:07:09 GMT
+                           Connection: upgrade
+                           Set-Cookie: AWSALB=oVBx+/ZymRlCU7CcRzIRbTo7P/q64R44TPBSrIXGrk080i1Ka3/JiVTnWLDvptXuN0YWB0CLit+a0Ve0xzxqu9PXa0UaJg2S25zfCJdw4uvjJlHdCmoZj44BZLic; Expires=Sat, 27 Jul 2019 09:07:09 GMT; Path=/
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: 8wEwFf03Sa3Tr/KXkkAe0fqU9QE=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+20/7/2019 5:16:11 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: www.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: NXPEVVnEu4s1k3oEfdR05g==
+                           Sec-WebSocket-Version: 13
+20/7/2019 5:16:11 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Sat, 20 Jul 2019 09:16:12 GMT
+                           Connection: upgrade
+                           Set-Cookie: AWSALB=rlznUbDtFBB1HkaVo/zI9/bs+5/Lm8byyRsexkNDrYFdQO2xIr8XI01vp4FgpxiV9oOqE9i189zVutojKVu5VRwC8d7lRTy9oZ//0e5jQDIdh7Sb27QrwG/xtX9N; Expires=Sat, 27 Jul 2019 09:16:12 GMT; Path=/
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: CyD9fskGCeCOJLoVMp1OgT5GauI=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+20/7/2019 5:16:11 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: www.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: NXPEVVnEu4s1k3oEfdR05g==
+                           Sec-WebSocket-Version: 13
+20/7/2019 5:16:12 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Sat, 20 Jul 2019 09:16:13 GMT
+                           Connection: upgrade
+                           Set-Cookie: AWSALB=QFrpHoYMoYrYdMMTnQU+RbCRC99FFlc2OU8XYGdM7NEdhqUGVg0lLco96Skot4+1e5kI8NBgkFnzHCe640vzgNd81ozdVjj1ismqKfLf9uCUyElkHoGGnzK81dCl; Expires=Sat, 27 Jul 2019 09:16:13 GMT; Path=/
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: CyD9fskGCeCOJLoVMp1OgT5GauI=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+20/7/2019 5:23:24 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: www.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: BQVPzC+fCKUwN5TGb2ARwg==
+                           Sec-WebSocket-Version: 13
+20/7/2019 5:23:24 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Sat, 20 Jul 2019 09:23:26 GMT
+                           Connection: upgrade
+                           Set-Cookie: AWSALB=gd3wVwMv5IQHtWy8yNARCSy5+2YI9a+jYxv3i4CTomi3fI+grFdLSZ+yuag61u0XrtR74DOweqUp4dRLI1a+nhlXid697aeeYpzokqqsu4oMA126nIkR7BfdVQbl; Expires=Sat, 27 Jul 2019 09:23:26 GMT; Path=/
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: lcossU7eUFRiPm/M3euOXTLR7xo=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+20/7/2019 5:23:24 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: www.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: BQVPzC+fCKUwN5TGb2ARwg==
+                           Sec-WebSocket-Version: 13
+20/7/2019 5:23:25 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Sat, 20 Jul 2019 09:23:26 GMT
+                           Connection: upgrade
+                           Set-Cookie: AWSALB=mouRIwABxULOIhA5LRs+ZGXd3aKKa8dMgSXVTnPVfJvoQDnFw+YFjeqdcqq/c7X/9cpClz8iZXEko2uTu8qBwXhZ/OuHz9/HGY3cwS9nOsTDdlBWOgvSXMS/Xbz3; Expires=Sat, 27 Jul 2019 09:23:26 GMT; Path=/
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: lcossU7eUFRiPm/M3euOXTLR7xo=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+20/7/2019 5:29:42 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: www.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: oK7eHj5GLlhZuUlpqdYlTQ==
+                           Sec-WebSocket-Version: 13
+20/7/2019 5:29:42 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Sat, 20 Jul 2019 09:29:44 GMT
+                           Connection: upgrade
+                           Set-Cookie: AWSALB=m/Cfp4msd1erBxMBspxAXJtD4k57e2q2A49EAtY1QpSeXWNWqvLGc+gqrMRlP8kUT7KnwRqUutaflCpzeKv1hlFENQkaxHxxEy/avc+G3DHom76Q1w4O/016hIcp; Expires=Sat, 27 Jul 2019 09:29:44 GMT; Path=/
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: jtp97JT48LJ45b3BS3I93d3XCoA=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+20/7/2019 5:29:43 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: www.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: oK7eHj5GLlhZuUlpqdYlTQ==
+                           Sec-WebSocket-Version: 13
+20/7/2019 5:29:43 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Sat, 20 Jul 2019 09:29:45 GMT
+                           Connection: upgrade
+                           Set-Cookie: AWSALB=/Yx5vx9TlgfbKWyXS1JiVGu6dpR3LEmmyF9DdsJsb4LhyQs5VR7LOZn5c2wXDYiV3NvaF5FoyPsKqAQ7rYY33ajo0IW99gVp6Vfj0QjOqge+Y+BQJKRbVoSKu2Bm; Expires=Sat, 27 Jul 2019 09:29:45 GMT; Path=/
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: jtp97JT48LJ45b3BS3I93d3XCoA=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+20/7/2019 5:31:47 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: www.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: 0YLJoYri25PhBY4je7BBVA==
+                           Sec-WebSocket-Version: 13
+20/7/2019 5:31:47 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Sat, 20 Jul 2019 09:31:48 GMT
+                           Connection: upgrade
+                           Set-Cookie: AWSALB=sVFAu9Y2r33kRG0ggr5yZR7AAmJXZ8T4uIYNwqwLN/lYG3KsI0SUZOrFXkSW73rVI9elAKBcyPbYo9ndqmMwsmNShDA+/6D8CEMvJ2whmrNKeqFTKUpP4tpBTB9X; Expires=Sat, 27 Jul 2019 09:31:48 GMT; Path=/
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: d0VaH6gDqZvIcALhk6RKaRMrwiQ=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+20/7/2019 5:31:47 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: www.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: 0YLJoYri25PhBY4je7BBVA==
+                           Sec-WebSocket-Version: 13
+20/7/2019 5:31:48 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Sat, 20 Jul 2019 09:31:49 GMT
+                           Connection: upgrade
+                           Set-Cookie: AWSALB=yAoyciwnKu52YSzRpjKJDecvp0cbYubuRhS5rOj3CVkudgOaJRHvZi05rsuZP8cTZ7+b3rjfjkhrgfGhuhbbyugUFzg/loYDEZrl8fjClKFRgBGNWWAWqQKweBBR; Expires=Sat, 27 Jul 2019 09:31:49 GMT; Path=/
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: d0VaH6gDqZvIcALhk6RKaRMrwiQ=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+20/7/2019 5:35:46 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: www.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: yklw6M2tbY5quApDCIu8LA==
+                           Sec-WebSocket-Version: 13
+20/7/2019 5:35:46 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Sat, 20 Jul 2019 09:35:47 GMT
+                           Connection: upgrade
+                           Set-Cookie: AWSALB=RqAnmfZqTYCSroRQiusnWXg3yy5+6atMGWwy/TdpAu3MEhmil1IEOubYQitdgDgKPQvWPlz1ijuQin18NkMJ0DF8WhnnHm+HO6pJsfDuazeSNigofJ/UJfbjbvG9; Expires=Sat, 27 Jul 2019 09:35:47 GMT; Path=/
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: TqmHMvyRGF6PlIo4jjdqi+nux9w=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+20/7/2019 5:35:46 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: www.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: yklw6M2tbY5quApDCIu8LA==
+                           Sec-WebSocket-Version: 13
+20/7/2019 5:35:47 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Sat, 20 Jul 2019 09:35:48 GMT
+                           Connection: upgrade
+                           Set-Cookie: AWSALB=HLTkACMt6tZYw5bh5PMiVL8CUioTlRDGCeKChL0ijl7m5IBrzVXGLY/DvBXl4UnLNwgoXLOeFeYTEpBnEbHQG6d8REoXHEVnnaZjOdgXuGjT+E/Ob2rkBtXkfc6e; Expires=Sat, 27 Jul 2019 09:35:48 GMT; Path=/
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: TqmHMvyRGF6PlIo4jjdqi+nux9w=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+20/7/2019 5:36:13 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: www.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: jclPnS+OmdLdIdyEXyLGRw==
+                           Sec-WebSocket-Version: 13
+20/7/2019 5:36:14 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Sat, 20 Jul 2019 09:36:15 GMT
+                           Connection: upgrade
+                           Set-Cookie: AWSALB=WmJmAHfGX24RmIy4WMWtWWrhHwRyCV0NCFkBV+8rpGVJrSKiYqM0ICLb0Bg7Yyp83hWV/3IbhsJYTlm3Vza7lQFJNFgmLIAB6+ESq4NkzKygJTZW43H9tye6GdL1; Expires=Sat, 27 Jul 2019 09:36:15 GMT; Path=/
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: ZoIhXVjQPphzl/N9WAlHtHk9kxA=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+20/7/2019 5:36:14 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: www.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: jclPnS+OmdLdIdyEXyLGRw==
+                           Sec-WebSocket-Version: 13
+20/7/2019 5:36:14 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Sat, 20 Jul 2019 09:36:16 GMT
+                           Connection: upgrade
+                           Set-Cookie: AWSALB=8WvBzCB90thcRFK8idaw8uHFGDZ3lP1SrYwae/gDSxrqYcXU6j6DGTNwFzOhh3QgfByTHsfRbg2lWhUxdGABbLsJCJoptDhzByAcw4WW1COmGGBVzA/4g6SmB+gn; Expires=Sat, 27 Jul 2019 09:36:16 GMT; Path=/
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: ZoIhXVjQPphzl/N9WAlHtHk9kxA=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+20/7/2019 5:50:18 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: www.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: noOQ0juRXTIZlNTA59kXRw==
+                           Sec-WebSocket-Version: 13
+20/7/2019 5:50:18 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Sat, 20 Jul 2019 09:50:20 GMT
+                           Connection: upgrade
+                           Set-Cookie: AWSALB=zvWNDD/PQeFbcRXRWCOcQg0AuwvF05/GEdKs/R8pjuonMqe3XkJChyrGAwR7peYYJuyP80zYDlspbwdMKTYsc4PNt6Xley21PtvLbBKobqT3l/EBBNIj3FdLkmH0; Expires=Sat, 27 Jul 2019 09:50:20 GMT; Path=/
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: +COFgpPFgcmhjnoJEEPq7/agWCU=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+20/7/2019 5:50:19 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: www.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: noOQ0juRXTIZlNTA59kXRw==
+                           Sec-WebSocket-Version: 13
+20/7/2019 5:50:19 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Sat, 20 Jul 2019 09:50:21 GMT
+                           Connection: upgrade
+                           Set-Cookie: AWSALB=GLJ5IzB5gg6IpbL6VYPkRRn1jaZirhYnioyON7afLT5/xqxssTrs7+Kis7R6m9S7pzMYF4hVbQwDdzIE1yb/P7R5rw18iw1ovPQo+4hbQGIeVAWDK2c8RUFIOeVE; Expires=Sat, 27 Jul 2019 09:50:21 GMT; Path=/
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: +COFgpPFgcmhjnoJEEPq7/agWCU=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+20/7/2019 5:51:48 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: www.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: OP+jK5bSl2OtwdUmyTgKPA==
+                           Sec-WebSocket-Version: 13
+20/7/2019 5:51:48 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Sat, 20 Jul 2019 09:51:50 GMT
+                           Connection: upgrade
+                           Set-Cookie: AWSALB=m0gzqTZH/ZmJU49QrkP+qrWF+E+6d1nx38Ms0gMUxRIVVUDGGdQ2VZwL3V+SqnzKSSRMQcXVDwi7BCG4zBG5jqiUbicUQDbUVf6vcwI+DW0l4JDiMMhPev/EGovD; Expires=Sat, 27 Jul 2019 09:51:50 GMT; Path=/
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: 9jf2VcFbUmsEaPDV1G4an6eBem8=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+20/7/2019 5:51:49 PM|Debug|WebSocket.sendHttpRequest:0|A request to the server:
+                           GET /realtime HTTP/1.1
+                           User-Agent: websocket-sharp/1.0
+                           Host: www.bitmex.com
+                           Upgrade: websocket
+                           Connection: Upgrade
+                           Sec-WebSocket-Key: OP+jK5bSl2OtwdUmyTgKPA==
+                           Sec-WebSocket-Version: 13
+20/7/2019 5:51:49 PM|Debug|WebSocket.sendHttpRequest:0|A response to this request:
+                           HTTP/1.1 101 Switching Protocols
+                           Date: Sat, 20 Jul 2019 09:51:51 GMT
+                           Connection: upgrade
+                           Set-Cookie: AWSALB=hwNbt5Vt4bfGQKdzJhqaA5vpXAU0ZZ7CcWyC1bh1p8IbgNbY94d9aTlbM+2pVfQKs93LEpfQ+Cf2WWY8jfNCmqJamGsSO7GpKwPqIP8STe79tRD5QbVa+BrdrBPL; Expires=Sat, 27 Jul 2019 09:51:51 GMT; Path=/
+                           Upgrade: websocket
+                           Sec-WebSocket-Accept: 9jf2VcFbUmsEaPDV1G4an6eBem8=
+                           Sec-WebSocket-Version: 13
+                           WebSocket-Server: uWebSockets
+                           Strict-Transport-Security: max-age=31536000; includeSubDomains
+20/7/2019 5:52:07 PM|Trace|WebSocket.close:0|Begin closing the connection.
+20/7/2019 5:52:07 PM|Info |WebSocket.close:0|Closing the connection has already been done.
+20/7/2019 5:52:07 PM|Debug|WebSocket.closeHandshake:0|Was clean?: True
+                             sent: True
+                             received: True
+20/7/2019 5:52:07 PM|Trace|WebSocket.close:0|End closing the connection.
+20/7/2019 5:52:07 PM|Trace|WebSocket.close:0|Begin closing the connection.
+20/7/2019 5:52:07 PM|Info |WebSocket.close:0|Closing the connection has already been done.
+20/7/2019 5:52:07 PM|Debug|WebSocket.closeHandshake:0|Was clean?: True
+                             sent: True
+                             received: True
+20/7/2019 5:52:07 PM|Trace|WebSocket.close:0|End closing the connection.
