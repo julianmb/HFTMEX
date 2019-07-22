@@ -14,14 +14,14 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="HFTMEX.exe.manifest" size="68387">
+    <dependentAssembly dependencyType="install" codebase="HFTMEX.exe.manifest" size="67279">
       <assemblyIdentity name="HFTMEX.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>45LTZgxpOdQ1VkdDqb/mlidezaL0jPP3X6U7Htpogjk=</dsig:DigestValue>
+        <dsig:DigestValue>52l7phMDETSz3/Dn2PjYoqDGiMPc9kf4ai0sQuX3URA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

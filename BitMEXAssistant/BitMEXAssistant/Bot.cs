@@ -31,7 +31,7 @@ namespace HFTMEX
 
         #region Brait
         decimal lastprice = 0;
-        private decimal bmlastprice;
+        private decimal BM_LastPrice;
 
         List<decimal[]> CB_Bids;
         List<decimal[]> CB_Asks;
@@ -2948,7 +2948,7 @@ namespace HFTMEX
 
                 //mlAsk.Text = CB_LastAsk.ToString();
                 //mlBid.Text = CB_LastBid.ToString();
-                mlPrice.Text = CB_LastPrice.ToString(); 
+                mlPrice.Text = CB_LastPrice.ToString("#.##"); 
             });
 
         }
@@ -2961,37 +2961,39 @@ namespace HFTMEX
                 string direction = ch[0];
                 decimal price = decimal.Parse(ch[1]);
                 decimal value = decimal.Parse(ch[2]);
-                               
+
+                index = ReturnOBIndex(price, direction);
+
                 if (direction == "sell") {
-                                        
+
+                    //decimal[] srow = FindRowOB(price, direction);
+
                     //Its a delete order?
-                    if (ch[2] == "0")
+                    if (value == 0)
                     {
-                        //We pass if we didnt found it
-                        if (index == CB_Asks.Count)
-                            continue;
                         CB_Asks.RemoveAt(index);
+                        //CB_Asks.Remove(srow);
+
                     }
                     //Its a change
                     else
                     {
-                        index = ReturnOBIndex(price, direction);
-                        if(index == CB_Asks.Count)
-                        {
-                            //Didnt find it, so lets add it
-                            //Where is the best place to add it ?
-                            index = findplacetoadd(price, direction);
+					    if (index > CB_Asks.Count)
+					    {
+						    //Didnt find it, so lets add it
+						    //Where is the best place to add it ?
+						    index = findplacetoadd(price, direction);
 
-                            decimal[] item = { price, value };
-                            CB_Asks.Insert(index, item);
-                            continue;
-                        }
-                        //Its an update
-                        else
-                        {
-                            //We found it it
-                            CB_Asks[index][1] = value;
-                        }
+						    decimal[] item = { price, value };
+						    CB_Asks.Insert(index, item);
+						    continue;
+					    }
+					    //Its an update
+					    else
+					    {
+						    //We found it it
+						    CB_Asks[index][1] = value;
+					    }
                     }
                 }
                 else
@@ -3008,7 +3010,7 @@ namespace HFTMEX
                     else
                     {
                         index = ReturnOBIndex(price, direction);
-                        if (index == CB_Bids.Count)
+                        if (index > CB_Bids.Count)
                         {
                             //Didnt find it, so lets add it
                             //Where is the best place to add it ?
@@ -3035,11 +3037,36 @@ namespace HFTMEX
             {
  
 
-                mlAsk.Text = CB_LastAsk.ToString();
-                mlBid.Text = CB_LastBid.ToString();
+                mlAsk.Text = CB_LastAsk.ToString("#.##");
+                mlBid.Text = CB_LastBid.ToString("#.##");
             });
         }
 
+        private decimal[] FindRowOB(decimal level, string direction)
+        {
+            if (direction == "sell")
+            {
+                foreach (var row in CB_Asks)
+                {
+                    if (Decimal.Equals(row[0], level))
+                    {
+                        return row;
+                    }
+                }
+            }
+            else
+            {
+                foreach (var row in CB_Bids)
+                {
+                    if (Decimal.Equals(row[0], level))
+                    {
+                        return row;
+                    }
+                }
+            }
+            return null;
+
+        }
 
         private int ReturnOBIndex(decimal dlevel, string side)
         {
@@ -3048,7 +3075,7 @@ namespace HFTMEX
             if (side == "sell") { 
                 foreach(var row in CB_Asks)
                 {
-                    if (row[0] == dlevel)
+                    if (Decimal.Equals(row[0],dlevel))
                     {
                         return index;
                     }                  
@@ -3059,7 +3086,7 @@ namespace HFTMEX
             {
                 foreach (var row in CB_Bids)
                 {
-                    if (row[0] == dlevel)
+                    if (Decimal.Equals(row[0], dlevel))
                     {
                         return index;
                     }
@@ -3067,7 +3094,7 @@ namespace HFTMEX
                 }
             }
 
-            return index;
+            return index+1;
 
         }
         private int findplacetoadd(decimal level, string side)
@@ -3138,14 +3165,18 @@ namespace HFTMEX
             decimal spread = curprice - nudCurrentPrice.Value;
             decimal perspread = (spread / curprice ) * 100;
 
-            decimal bmdif = (nudCurrentPrice.Value - bmlastprice);
+            decimal bmdif = (nudCurrentPrice.Value - BM_LastPrice);
 
             sbyte signal = GenerateSignal(curprice, tbuy, tsell, ratio, dif, perspread, nudCurrentPrice.Value, bmdif);
 
 
             // Price, tbuy, tsell, ratio, diff, spread, bitmex, bitmexdiff
             string[] row = { curprice.ToString("0.##"), tbuy.ToString("0.##"), tsell.ToString("0.##"), ratio.ToString("0.##"), dif.ToString("0.##"), perspread.ToString("0.####"),nudCurrentPrice.Value.ToString("0.##"), bmdif.ToString("0.##"), signal.ToString() };
-            //string rowstr = "PCB: " + row[0] + " TB: " + row[1] + " TS: " + row[2] + " Ratio: " + row[3] + " Diff: " + row[4] + " Spread: " + row[5] + " BP: " + row[6] + " BDF: " + row[7]; 
+            string rowstr = "PCB:" + row[0] + " TB:" + row[1] + " TS:" + row[2] + " Ratio:" + row[3] + " Diff:" + row[4] + " Spread:" + row[5] + " BP:" + row[6] + " BDF:" + row[7];
+
+            if(cbSaveFile.Checked)
+                SaveLog(rowstr);
+
             var lvi = new ListViewItem(row);
             if(dif>3 || dif < -3)
                 lvi = markbold(lvi, 4);
@@ -3174,10 +3205,17 @@ namespace HFTMEX
 
             });
             lastprice = curprice;
-            bmlastprice = nudCurrentPrice.Value;
+            BM_LastPrice = nudCurrentPrice.Value;
 
 
 
+        }
+
+        private void SaveLog(object rowsr)
+        {
+            StreamWriter sw = new StreamWriter("log.txt", true);
+            sw.WriteLine(DateTime.Now.ToString("hh:mm:ss.fff ") + rowsr);
+            sw.Close();
         }
 
         private decimal GetVolume(List<decimal[]> ob, decimal oblimit)
@@ -4134,6 +4172,8 @@ namespace HFTMEX
         {
 
         }
+
+
     }
 
     public class Alert

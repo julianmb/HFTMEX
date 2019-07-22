@@ -145,7 +145,6 @@
             this.nudSpreadBuyContractsEach = new System.Windows.Forms.NumericUpDown();
             this.btnSpreadPlaceOrders = new MetroFramework.Controls.MetroButton();
             this.tabLimitNow = new MetroFramework.Controls.MetroTabPage();
-            this.lbCoinBase = new System.Windows.Forms.ListBox();
             this.gbCoinbase = new System.Windows.Forms.GroupBox();
             this.mlPrice = new MetroFramework.Controls.MetroLabel();
             this.mlAsk = new MetroFramework.Controls.MetroLabel();
@@ -153,8 +152,6 @@
             this.btnStop = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.metroButton3 = new MetroFramework.Controls.MetroButton();
-            this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.label31 = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.chkLimitNowSellSLMarket = new MetroFramework.Controls.MetroCheckBox();
@@ -248,6 +245,7 @@
             this.chBitmex = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cbSaveFile = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudPositionLimitPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPositionMargin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCurrentPrice)).BeginInit();
@@ -2165,7 +2163,6 @@
             // 
             // tabLimitNow
             // 
-            this.tabLimitNow.Controls.Add(this.lbCoinBase);
             this.tabLimitNow.Controls.Add(this.gbCoinbase);
             this.tabLimitNow.Controls.Add(this.groupBox10);
             this.tabLimitNow.Controls.Add(this.label31);
@@ -2183,14 +2180,6 @@
             this.tabLimitNow.VerticalScrollbarBarColor = true;
             this.tabLimitNow.VerticalScrollbarHighlightOnWheel = false;
             this.tabLimitNow.VerticalScrollbarSize = 10;
-            // 
-            // lbCoinBase
-            // 
-            this.lbCoinBase.FormattingEnabled = true;
-            this.lbCoinBase.Location = new System.Drawing.Point(458, 233);
-            this.lbCoinBase.Name = "lbCoinBase";
-            this.lbCoinBase.Size = new System.Drawing.Size(391, 108);
-            this.lbCoinBase.TabIndex = 35;
             // 
             // gbCoinbase
             // 
@@ -2258,36 +2247,13 @@
             // groupBox10
             // 
             this.groupBox10.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox10.Controls.Add(this.metroButton3);
-            this.groupBox10.Controls.Add(this.metroButton2);
+            this.groupBox10.Controls.Add(this.cbSaveFile);
             this.groupBox10.Location = new System.Drawing.Point(7, 7);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Size = new System.Drawing.Size(152, 218);
             this.groupBox10.TabIndex = 33;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Automated";
-            // 
-            // metroButton3
-            // 
-            this.metroButton3.BackColor = System.Drawing.Color.Red;
-            this.metroButton3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.metroButton3.Location = new System.Drawing.Point(12, 108);
-            this.metroButton3.Name = "metroButton3";
-            this.metroButton3.Size = new System.Drawing.Size(66, 80);
-            this.metroButton3.TabIndex = 24;
-            this.metroButton3.Text = "Limit Sell\r\n[E]";
-            this.metroButton3.UseSelectable = true;
-            // 
-            // metroButton2
-            // 
-            this.metroButton2.BackColor = System.Drawing.Color.LimeGreen;
-            this.metroButton2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.metroButton2.Location = new System.Drawing.Point(12, 22);
-            this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(66, 80);
-            this.metroButton2.TabIndex = 22;
-            this.metroButton2.Text = "Limit Buy\r\n[Q]\r\n";
-            this.metroButton2.UseSelectable = true;
             // 
             // label31
             // 
@@ -3538,6 +3504,16 @@
             // 
             this.columnHeader2.Text = "Signal";
             // 
+            // cbSaveFile
+            // 
+            this.cbSaveFile.AutoSize = true;
+            this.cbSaveFile.Location = new System.Drawing.Point(11, 81);
+            this.cbSaveFile.Name = "cbSaveFile";
+            this.cbSaveFile.Size = new System.Drawing.Size(70, 17);
+            this.cbSaveFile.TabIndex = 27;
+            this.cbSaveFile.Text = "Save File";
+            this.cbSaveFile.UseVisualStyleBackColor = true;
+            // 
             // Bot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3614,6 +3590,7 @@
             this.gbCoinbase.ResumeLayout(false);
             this.gbCoinbase.PerformLayout();
             this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudLimitNowTakeProfitSellDelta)).EndInit();
@@ -3851,8 +3828,6 @@
         private System.Windows.Forms.NumericUpDown nudSettingsOverloadRetryAttempts;
         private System.Windows.Forms.GroupBox gbCoinbase;
         private System.Windows.Forms.GroupBox groupBox10;
-        private MetroFramework.Controls.MetroButton metroButton3;
-        private MetroFramework.Controls.MetroButton metroButton2;
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Button btnStart;
         private MetroFramework.Controls.MetroLabel mlAsk;
@@ -3867,8 +3842,8 @@
         private System.Windows.Forms.ColumnHeader chDifPrice;
         private System.Windows.Forms.ColumnHeader chBitmex;
         private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ListBox lbCoinBase;
         private MetroFramework.Controls.MetroLabel mlPrice;
         private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.CheckBox cbSaveFile;
     }
 }
