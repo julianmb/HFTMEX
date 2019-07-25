@@ -4,7 +4,7 @@
   <description asmv2:iconFile="Bitmex.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="HFTMEX" version="0.2.0.0" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="HFTMEX" version="0.4.0.0" language="neutral" processorArchitecture="msil" />
     <commandLine file="HFTMEX.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -79,14 +79,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HFTMEX.exe" size="1254912">
-      <assemblyIdentity name="HFTMEX" version="0.2.0.0" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HFTMEX.exe" size="1259008">
+      <assemblyIdentity name="HFTMEX" version="0.4.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>js0LBJdbZ9+KhUxdVs8/loWPkiNZ2Ocd0aQGqeq74+g=</dsig:DigestValue>
+        <dsig:DigestValue>3JCvju1I/reKJGBpURyHuCyBbwYxyoQC32LHB4kMojI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

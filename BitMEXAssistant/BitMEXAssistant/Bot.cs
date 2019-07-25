@@ -30,15 +30,34 @@ namespace HFTMEX
     {
 
         #region Brait
+
         decimal lastprice = 0;
         private decimal BM_LastPrice;
+        sbyte LastSignal = 0;
 
+        private bool bAutoTrade;
+        private decimal dOBlimit;
+        private sbyte sbRatio;
+
+        #region CoinBase
         List<decimal[]> CB_Bids;
         List<decimal[]> CB_Asks;
 
         decimal CB_LastBid;
         decimal CB_LastAsk;
         private decimal CB_LastPrice;
+
+        decimal CB_LastPBuy;
+        decimal CB_LastPSell;
+
+        decimal CB_LastVolumeBuy =0 ;
+        decimal CB_LastVolumeSell = 0;
+
+        decimal CB_LastRatio = 0;
+        CoinbasePro.CoinbaseProClient cbpc = new CoinbasePro.CoinbaseProClient();
+        CoinbasePro.WebSocket.WebSocket CB_websocket;
+        #endregion
+        
         #endregion
 
         #region Class Properties
@@ -76,7 +95,7 @@ namespace HFTMEX
         Dictionary<string, decimal> Prices = new Dictionary<string, decimal>();
         //List<Alert> Alerts = new List<Alert>();
 
-        public static string Version = "0.0.30";
+        public static string Version = "0.0.4";
 
         string LimitNowBuyOrderId = "";
         decimal LimitNowBuyOrderPrice = 0;
@@ -133,6 +152,7 @@ namespace HFTMEX
         // reconnect timers
         System.Timers.Timer GeneralWS_ReconnectTimer = new System.Timers.Timer();
         System.Timers.Timer UserWS_ReconnectTimer = new System.Timers.Timer();
+
         #endregion
 
         public Bot()
@@ -2906,33 +2926,48 @@ namespace HFTMEX
 
         private void LoadCoinbase()
         {
-            CoinbasePro.CoinbaseProClient cbpc = new CoinbasePro.CoinbaseProClient();
-            CoinbasePro.WebSocket.WebSocket webSocket;
             //use the websocket feed
             var productTypes = new List<ProductType>() { ProductType.BtcUsd };
-            var channels = new List<ChannelType>() { ChannelType.Level2,ChannelType.Ticker }; // When not providing any channels, the socket will subscribe to all channels
-            webSocket = cbpc.WebSocket;
+            var channels = new List<ChannelType>() { ChannelType.Level2,ChannelType.Ticker, ChannelType.Matches }; // When not providing any channels, the socket will subscribe to all channels
+            CB_websocket = cbpc.WebSocket;
 
             // EventHandler for the heartbeat response type
             //webSocket.OnHeartbeatReceived += WebSocket_OnHeartbeatReceived;
 
-            webSocket.OnTickerReceived += (sender, e) =>
+            CB_websocket.OnTickerReceived += (sender, e) =>
             {
                 SaveBestQuotes(e);
             };
 
-            webSocket.OnSnapShotReceived += (sender, e) =>
+            CB_websocket.OnSnapShotReceived += (sender, e) =>
             {
                 ProcessSnapShot(e);
             };
 
-            webSocket.OnLevel2UpdateReceived += (sender, e) =>
+            CB_websocket.OnLevel2UpdateReceived += (sender, e) =>
             {
                 UpdateCBOB(e);
             };
 
-            webSocket.Start(productTypes, channels);
+            CB_websocket.OnMatchReceived += (sender, e) =>
+            {
+                ProcessMatches(e);
+            };
+            CB_websocket.Start(productTypes, channels);
 
+        }
+
+        private void ProcessMatches(WebfeedEventArgs<Match> e)
+        {
+            if (e.LastOrder.Side == CoinbasePro.Services.Orders.Types.OrderSide.Buy)
+            { 
+                CB_LastVolumeBuy += e.LastOrder.Size;
+            }
+            else
+            {
+                CB_LastVolumeSell += e.LastOrder.Size;
+            }
+            //throw new NotImplementedException();
         }
 
         private void SaveBestQuotes(WebfeedEventArgs<Ticker> e)
@@ -2960,7 +2995,7 @@ namespace HFTMEX
             {
                 string direction = ch[0];
                 decimal price = decimal.Parse(ch[1]);
-                decimal value = decimal.Parse(ch[2]);
+                decimal value = decimal.Parse(ch[2], System.Globalization.NumberStyles.Float);
 
                 index = ReturnOBIndex(price, direction);
 
@@ -2971,6 +3006,9 @@ namespace HFTMEX
                     //Its a delete order?
                     if (value == 0)
                     {
+                        //We pass if we didnt found it
+                        if (index == CB_Bids.Count)
+                            continue;
                         CB_Asks.RemoveAt(index);
                         //CB_Asks.Remove(srow);
 
@@ -3033,13 +3071,69 @@ namespace HFTMEX
             CB_LastAsk = CB_Asks[0][0];
             CB_LastBid = CB_Bids[0][0];
 
+
+
+            //Calculate Volume
+            //decimal oblimit = CB_LastPrice / 1000; // 0.1%
+            decimal oblimit = (dOBlimit / 100) * (CB_LastPrice);
+
+            CB_LastPBuy = GetVolume(CB_Bids, oblimit);
+            CB_LastPSell = GetVolume(CB_Asks, oblimit);
+
+            //Calculate Ratio;
+            CB_LastRatio = CalculateRatio();
+
             this.BeginInvoke((System.Windows.Forms.MethodInvoker)delegate ()
             {
- 
+                //oblimit = decimal.Parse(cbOBLimit.Text);
 
                 mlAsk.Text = CB_LastAsk.ToString("#.##");
                 mlBid.Text = CB_LastBid.ToString("#.##");
+                mlBuyPVol.Text = CB_LastPBuy.ToString("#.##");
+                mlSellPVol.Text = CB_LastPSell.ToString("#.##");
+                mlRatio.Text = CB_LastRatio.ToString();
+
+
+
+
+
             });
+
+
+
+            if (bAutoTrade)
+            {
+                sbyte signal = GenerateSignal(CB_LastPrice, CB_LastPBuy, CB_LastPSell, CB_LastRatio, 0, 0, 0, 0);
+                
+                if(signal != 0) { 
+                    if (LastSignal == -signal) {
+                        ExecSignal(signal); 
+                    }
+                    LastSignal = signal;
+                }
+
+            }
+        }
+
+        private void ExecSignal(int signal)
+        {
+            if (signal > 0)
+            {
+
+                this.BeginInvoke((System.Windows.Forms.MethodInvoker)delegate ()
+                {
+                    Bot_KeyDown(this, new KeyEventArgs(Keys.Q));
+                });
+
+            }
+            else if (signal < 0)
+            {
+                this.BeginInvoke((System.Windows.Forms.MethodInvoker)delegate ()
+                {
+                    Bot_KeyDown(this, new KeyEventArgs(Keys.E));
+                });
+
+            }
         }
 
         private decimal[] FindRowOB(decimal level, string direction)
@@ -3144,52 +3238,51 @@ namespace HFTMEX
             decimal dtask = CB_LastAsk;
             decimal dtbid = CB_LastBid;
 
-            decimal tbuy = 0;
-            decimal tsell = 0;
-            decimal oblimit = 20;
-
-            tbuy = GetVolume(CB_Bids, oblimit);
-            tsell = GetVolume(CB_Asks, oblimit);
+            decimal tpbuy = 0;
+            decimal tpsell = 0;
 
 
-
+            tpbuy = CB_LastPBuy;
+            tpsell = CB_LastPSell;
 
             decimal curprice = average(dtask, dtbid);
             decimal dif = (curprice - lastprice);
-            decimal ratio;
-            if (tbuy > tsell)
-                ratio = tbuy / tsell;
-            else
-                ratio = -(tsell / tbuy);
+            
+
+
 
             decimal spread = curprice - nudCurrentPrice.Value;
             decimal perspread = (spread / curprice ) * 100;
 
             decimal bmdif = (nudCurrentPrice.Value - BM_LastPrice);
 
-            sbyte signal = GenerateSignal(curprice, tbuy, tsell, ratio, dif, perspread, nudCurrentPrice.Value, bmdif);
+            //sbyte signal = GenerateSignal(curprice, tpbuy, tpsell, ratio, dif, perspread, nudCurrentPrice.Value, bmdif);
 
 
             // Price, tbuy, tsell, ratio, diff, spread, bitmex, bitmexdiff
-            string[] row = { curprice.ToString("0.##"), tbuy.ToString("0.##"), tsell.ToString("0.##"), ratio.ToString("0.##"), dif.ToString("0.##"), perspread.ToString("0.####"),nudCurrentPrice.Value.ToString("0.##"), bmdif.ToString("0.##"), signal.ToString() };
-            string rowstr = "PCB:" + row[0] + " TB:" + row[1] + " TS:" + row[2] + " Ratio:" + row[3] + " Diff:" + row[4] + " Spread:" + row[5] + " BP:" + row[6] + " BDF:" + row[7];
+            string[] row = { curprice.ToString("0.##"), tpbuy.ToString("0.##"), tpsell.ToString("0.##"), CB_LastVolumeBuy.ToString("0.##"), CB_LastVolumeSell.ToString("0.##") , CB_LastRatio.ToString("0.##"), dif.ToString("0.##"), perspread.ToString("0.####"),nudCurrentPrice.Value.ToString("0.##"), bmdif.ToString("0.##"), LastSignal.ToString() };
+            string rowstr = "PCB:" + row[0] + " PB:" + row[1] + " PS:" + row[2] + " LB:" + row[3] + " LS:" + row[4] + " Ratio:" + row[5] + " Diff:" + row[6] + " Spread:" + row[7] + " BP:" + row[8] + " BDF:" + row[9];
 
-            if(cbSaveFile.Checked)
+ 
+
+            if (cbSaveFile.Checked)
                 SaveLog(rowstr);
 
             var lvi = new ListViewItem(row);
             if(dif>3 || dif < -3)
-                lvi = markbold(lvi, 4);
-            if(ratio > 2 || ratio < -2)
-                lvi = markbold(lvi, 3);
-            if (perspread > 0.1M || perspread < -0.1M)
+                lvi = markbold(lvi, 6);
+            if(CB_LastRatio > 2 || CB_LastRatio < -2)
                 lvi = markbold(lvi, 5);
-            if (bmdif > 3 || bmdif < -3)
+            if (perspread > 0.1M || perspread < -0.1M)
                 lvi = markbold(lvi, 7);
-            if (signal > 0 || signal < 0)
-                lvi = markbold(lvi, 8);
+            if (bmdif > 3 || bmdif < -3)
+                lvi = markbold(lvi, 9);
+            if (LastSignal > sbRatio || LastSignal < sbRatio)
+                lvi = markbold(lvi, 10);
 
-            
+            CB_LastVolumeBuy = 0;
+            CB_LastVolumeSell = 0;
+
             this.BeginInvoke((System.Windows.Forms.MethodInvoker)delegate ()
             {
 
@@ -3211,10 +3304,23 @@ namespace HFTMEX
 
         }
 
+        private decimal CalculateRatio()
+        {
+            decimal tpbuy = CB_LastPBuy;
+            decimal tpsell = CB_LastPSell;
+            decimal ratio;
+            if (tpbuy > tpsell)
+                ratio = tpbuy / tpsell;
+            else
+                ratio = -(tpsell / tpbuy);
+            return ratio;
+        }
+
         private void SaveLog(object rowsr)
         {
-            StreamWriter sw = new StreamWriter("log.txt", true);
-            sw.WriteLine(DateTime.Now.ToString("hh:mm:ss.fff ") + rowsr);
+            string filename = DateTime.Now.ToString("yyyyMMddTHHmmss");
+            StreamWriter sw = new StreamWriter(filename, true);
+            sw.WriteLine(DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss") + rowsr);
             sw.Close();
         }
 
@@ -3223,28 +3329,40 @@ namespace HFTMEX
             decimal totalv = 0;
             decimal dtlevel = ob[0][0];
 
-           // for(int i = 0; ; i++)
+            // for(int i = 0; ; i++)
             //{
             //    totalv += ob[i][1];
             //    if (totalv > oblimit)
             //        return totalv;
             //}
 
-            foreach (var level in ob)
+            try { 
+                foreach (var level in ob)
+                {
+                    decimal diff = (dtlevel - level[0]);
+                    if (oblimit < diff || -oblimit > diff)
+                        break;
+                    totalv += level[1];
+                }
+            }
+            catch
             {
-                decimal diff = (dtlevel - level[0]);
-                if (oblimit < diff || -oblimit > diff)
-                    break;
-                totalv += level[1];
+                foreach (var level in ob.ToList())
+                {
+                    decimal diff = (dtlevel - level[0]);
+                    if (oblimit < diff || -oblimit > diff)
+                        break;
+                    totalv += level[1];
+                }
             }
             return totalv;
         }
 
         private sbyte GenerateSignal(decimal curprice, decimal tbuy, decimal tsell, decimal ratio, decimal dif, decimal perspread, decimal value, decimal bmdif)
         {
-            if (ratio > 2)
+            if (ratio > sbRatio)
                 return 1;
-            else if (ratio < -2)
+            else if (ratio < -sbRatio)
                 return -1;
             else
                 return 0;
@@ -4148,19 +4266,26 @@ namespace HFTMEX
 
         private void BtnStart_Click(object sender, EventArgs e)
         {
+            NudRatioExec_ValueChanged(null,null);
+            CbOBLimit_SelectedIndexChanged(null, null);
+
             LoadCoinbase();
             tmrUpdateBook.Start();
         }
 
         private void BtnStop_Click(object sender, EventArgs e)
         {
+            CB_websocket.Stop();
             tmrUpdateBook.Stop();
+
         }
 
         private void TmrUpdateBook_Tick(object sender, EventArgs e)
         {
             if (CB_Asks != null)
                 ProcessCB();
+
+
         }
 
         private void DisplayOB()
@@ -4173,7 +4298,27 @@ namespace HFTMEX
 
         }
 
+        private void LvOrders_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+        }
+
+        private void CbAutoTrade_CheckedChanged(object sender, EventArgs e)
+        {
+            bAutoTrade = cbAutoTrade.Checked;
+
+        }
+
+        private void NudRatioExec_ValueChanged(object sender, EventArgs e)
+        {
+            sbRatio = (sbyte)nudRatioExec.Value;
+        }
+
+        private void CbOBLimit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dOBlimit = decimal.Parse(cbOBLimit.Text);
+
+        }
     }
 
     public class Alert

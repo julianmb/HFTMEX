@@ -152,6 +152,7 @@
             this.btnStop = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.cbSaveFile = new System.Windows.Forms.CheckBox();
             this.label31 = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.chkLimitNowSellSLMarket = new MetroFramework.Controls.MetroCheckBox();
@@ -237,15 +238,24 @@
             this.tmrUpdateBook = new System.Windows.Forms.Timer(this.components);
             this.lvOrders = new System.Windows.Forms.ListView();
             this.chPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chBuy = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chSell = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chPBuy = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chPSell = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chVBuy = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chVSell = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chRatio = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chDiff = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chDifPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chBitmex = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cbSaveFile = new System.Windows.Forms.CheckBox();
+            this.chBMDiff = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chSignal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cbAutoTrade = new System.Windows.Forms.CheckBox();
+            this.cbOBLimit = new System.Windows.Forms.ComboBox();
+            this.mlBuyPVol = new MetroFramework.Controls.MetroLabel();
+            this.mlSellPVol = new MetroFramework.Controls.MetroLabel();
+            this.mlRatio = new MetroFramework.Controls.MetroLabel();
+            this.nudRatioExec = new System.Windows.Forms.NumericUpDown();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.nudPositionLimitPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPositionMargin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCurrentPrice)).BeginInit();
@@ -306,6 +316,7 @@
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudManualMarketBuyContracts)).BeginInit();
             this.TabControl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRatioExec)).BeginInit();
             this.SuspendLayout();
             // 
             // ddlCandleTimes
@@ -2184,6 +2195,9 @@
             // gbCoinbase
             // 
             this.gbCoinbase.BackColor = System.Drawing.Color.Transparent;
+            this.gbCoinbase.Controls.Add(this.mlRatio);
+            this.gbCoinbase.Controls.Add(this.mlSellPVol);
+            this.gbCoinbase.Controls.Add(this.mlBuyPVol);
             this.gbCoinbase.Controls.Add(this.mlPrice);
             this.gbCoinbase.Controls.Add(this.mlAsk);
             this.gbCoinbase.Controls.Add(this.mlBid);
@@ -2202,27 +2216,27 @@
             this.mlPrice.AutoSize = true;
             this.mlPrice.Location = new System.Drawing.Point(107, 47);
             this.mlPrice.Name = "mlPrice";
-            this.mlPrice.Size = new System.Drawing.Size(16, 19);
+            this.mlPrice.Size = new System.Drawing.Size(61, 19);
             this.mlPrice.TabIndex = 25;
-            this.mlPrice.Text = "0";
+            this.mlPrice.Text = "00000.00";
             // 
             // mlAsk
             // 
             this.mlAsk.AutoSize = true;
             this.mlAsk.Location = new System.Drawing.Point(107, 16);
             this.mlAsk.Name = "mlAsk";
-            this.mlAsk.Size = new System.Drawing.Size(16, 19);
+            this.mlAsk.Size = new System.Drawing.Size(61, 19);
             this.mlAsk.TabIndex = 24;
-            this.mlAsk.Text = "0";
+            this.mlAsk.Text = "00000.00";
             // 
             // mlBid
             // 
             this.mlBid.AutoSize = true;
             this.mlBid.Location = new System.Drawing.Point(107, 78);
             this.mlBid.Name = "mlBid";
-            this.mlBid.Size = new System.Drawing.Size(16, 19);
+            this.mlBid.Size = new System.Drawing.Size(61, 19);
             this.mlBid.TabIndex = 23;
-            this.mlBid.Text = "0";
+            this.mlBid.Text = "00000.00";
             // 
             // btnStop
             // 
@@ -2247,6 +2261,11 @@
             // groupBox10
             // 
             this.groupBox10.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox10.Controls.Add(this.metroLabel13);
+            this.groupBox10.Controls.Add(this.metroLabel6);
+            this.groupBox10.Controls.Add(this.nudRatioExec);
+            this.groupBox10.Controls.Add(this.cbOBLimit);
+            this.groupBox10.Controls.Add(this.cbAutoTrade);
             this.groupBox10.Controls.Add(this.cbSaveFile);
             this.groupBox10.Location = new System.Drawing.Point(7, 7);
             this.groupBox10.Name = "groupBox10";
@@ -2254,6 +2273,16 @@
             this.groupBox10.TabIndex = 33;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Automated";
+            // 
+            // cbSaveFile
+            // 
+            this.cbSaveFile.AutoSize = true;
+            this.cbSaveFile.Location = new System.Drawing.Point(6, 100);
+            this.cbSaveFile.Name = "cbSaveFile";
+            this.cbSaveFile.Size = new System.Drawing.Size(70, 17);
+            this.cbSaveFile.TabIndex = 27;
+            this.cbSaveFile.Text = "Save File";
+            this.cbSaveFile.UseVisualStyleBackColor = true;
             // 
             // label31
             // 
@@ -2446,8 +2475,6 @@
             // chkLimitNowSellContinue
             // 
             this.chkLimitNowSellContinue.AutoSize = true;
-            this.chkLimitNowSellContinue.Checked = true;
-            this.chkLimitNowSellContinue.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkLimitNowSellContinue.Location = new System.Drawing.Point(6, 187);
             this.chkLimitNowSellContinue.Name = "chkLimitNowSellContinue";
             this.chkLimitNowSellContinue.Size = new System.Drawing.Size(136, 15);
@@ -2766,8 +2793,6 @@
             // chkLimitNowBuyContinue
             // 
             this.chkLimitNowBuyContinue.AutoSize = true;
-            this.chkLimitNowBuyContinue.Checked = true;
-            this.chkLimitNowBuyContinue.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkLimitNowBuyContinue.Location = new System.Drawing.Point(5, 187);
             this.chkLimitNowBuyContinue.Name = "chkLimitNowBuyContinue";
             this.chkLimitNowBuyContinue.Size = new System.Drawing.Size(138, 15);
@@ -3451,74 +3476,181 @@
             this.lvOrders.Alignment = System.Windows.Forms.ListViewAlignment.Default;
             this.lvOrders.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chPrice,
-            this.chBuy,
-            this.chSell,
+            this.chPBuy,
+            this.chPSell,
+            this.chVBuy,
+            this.chVSell,
             this.chRatio,
             this.chDiff,
             this.chDifPrice,
             this.chBitmex,
-            this.columnHeader1,
-            this.columnHeader2});
+            this.chBMDiff,
+            this.chSignal});
             this.lvOrders.HoverSelection = true;
             this.lvOrders.Location = new System.Drawing.Point(863, 34);
             this.lvOrders.MultiSelect = false;
             this.lvOrders.Name = "lvOrders";
-            this.lvOrders.Size = new System.Drawing.Size(554, 616);
+            this.lvOrders.Size = new System.Drawing.Size(676, 616);
             this.lvOrders.TabIndex = 37;
             this.lvOrders.UseCompatibleStateImageBehavior = false;
             this.lvOrders.View = System.Windows.Forms.View.Details;
+            this.lvOrders.SelectedIndexChanged += new System.EventHandler(this.LvOrders_SelectedIndexChanged);
             // 
             // chPrice
             // 
             this.chPrice.Text = "Price";
+            this.chPrice.Width = 50;
             // 
-            // chBuy
+            // chPBuy
             // 
-            this.chBuy.Text = "Buy";
+            this.chPBuy.Text = "P.B";
+            this.chPBuy.Width = 40;
             // 
-            // chSell
+            // chPSell
             // 
-            this.chSell.Text = "Sell";
+            this.chPSell.Text = "P.S";
+            this.chPSell.Width = 40;
+            // 
+            // chVBuy
+            // 
+            this.chVBuy.Text = "V.B";
+            this.chVBuy.Width = 40;
+            // 
+            // chVSell
+            // 
+            this.chVSell.Text = "V.S";
+            this.chVSell.Width = 40;
             // 
             // chRatio
             // 
             this.chRatio.Text = "Ratio";
+            this.chRatio.Width = 40;
             // 
             // chDiff
             // 
             this.chDiff.Text = "Diff";
+            this.chDiff.Width = 36;
             // 
             // chDifPrice
             // 
             this.chDifPrice.Text = "Spread ";
+            this.chDifPrice.Width = 50;
             // 
             // chBitmex
             // 
             this.chBitmex.Text = "Bitmex";
+            this.chBitmex.Width = 52;
             // 
-            // columnHeader1
+            // chBMDiff
             // 
-            this.columnHeader1.Text = "BM Dif";
+            this.chBMDiff.Text = "BM Dif";
+            this.chBMDiff.Width = 49;
             // 
-            // columnHeader2
+            // chSignal
             // 
-            this.columnHeader2.Text = "Signal";
+            this.chSignal.Text = "Signal";
+            this.chSignal.Width = 41;
             // 
-            // cbSaveFile
+            // cbAutoTrade
             // 
-            this.cbSaveFile.AutoSize = true;
-            this.cbSaveFile.Location = new System.Drawing.Point(11, 81);
-            this.cbSaveFile.Name = "cbSaveFile";
-            this.cbSaveFile.Size = new System.Drawing.Size(70, 17);
-            this.cbSaveFile.TabIndex = 27;
-            this.cbSaveFile.Text = "Save File";
-            this.cbSaveFile.UseVisualStyleBackColor = true;
+            this.cbAutoTrade.AutoSize = true;
+            this.cbAutoTrade.Location = new System.Drawing.Point(11, 24);
+            this.cbAutoTrade.Name = "cbAutoTrade";
+            this.cbAutoTrade.Size = new System.Drawing.Size(79, 17);
+            this.cbAutoTrade.TabIndex = 28;
+            this.cbAutoTrade.Text = "Auto Trade";
+            this.cbAutoTrade.UseVisualStyleBackColor = true;
+            this.cbAutoTrade.CheckedChanged += new System.EventHandler(this.CbAutoTrade_CheckedChanged);
+            // 
+            // cbOBLimit
+            // 
+            this.cbOBLimit.FormattingEnabled = true;
+            this.cbOBLimit.Items.AddRange(new object[] {
+            "0.05",
+            "0.10",
+            "0.15",
+            "0.20",
+            "0.25",
+            "0.30",
+            "0.35",
+            "0.40",
+            "0.45",
+            "0.50"});
+            this.cbOBLimit.Location = new System.Drawing.Point(6, 48);
+            this.cbOBLimit.Name = "cbOBLimit";
+            this.cbOBLimit.Size = new System.Drawing.Size(51, 21);
+            this.cbOBLimit.TabIndex = 35;
+            this.cbOBLimit.Text = "0.10";
+            this.cbOBLimit.SelectedIndexChanged += new System.EventHandler(this.CbOBLimit_SelectedIndexChanged);
+            // 
+            // mlBuyPVol
+            // 
+            this.mlBuyPVol.AutoSize = true;
+            this.mlBuyPVol.Location = new System.Drawing.Point(206, 16);
+            this.mlBuyPVol.Name = "mlBuyPVol";
+            this.mlBuyPVol.Size = new System.Drawing.Size(47, 19);
+            this.mlBuyPVol.TabIndex = 26;
+            this.mlBuyPVol.Text = "000.00";
+            // 
+            // mlSellPVol
+            // 
+            this.mlSellPVol.AutoSize = true;
+            this.mlSellPVol.Location = new System.Drawing.Point(206, 47);
+            this.mlSellPVol.Name = "mlSellPVol";
+            this.mlSellPVol.Size = new System.Drawing.Size(47, 19);
+            this.mlSellPVol.TabIndex = 27;
+            this.mlSellPVol.Text = "000.00";
+            // 
+            // mlRatio
+            // 
+            this.mlRatio.AutoSize = true;
+            this.mlRatio.Location = new System.Drawing.Point(206, 78);
+            this.mlRatio.Name = "mlRatio";
+            this.mlRatio.Size = new System.Drawing.Size(47, 19);
+            this.mlRatio.TabIndex = 28;
+            this.mlRatio.Text = "000.00";
+            // 
+            // nudRatioExec
+            // 
+            this.nudRatioExec.Location = new System.Drawing.Point(6, 75);
+            this.nudRatioExec.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nudRatioExec.Name = "nudRatioExec";
+            this.nudRatioExec.Size = new System.Drawing.Size(59, 20);
+            this.nudRatioExec.TabIndex = 36;
+            this.nudRatioExec.Value = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            this.nudRatioExec.ValueChanged += new System.EventHandler(this.NudRatioExec_ValueChanged);
+            // 
+            // metroLabel6
+            // 
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.Location = new System.Drawing.Point(63, 48);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(43, 19);
+            this.metroLabel6.TabIndex = 37;
+            this.metroLabel6.Text = "% OB";
+            // 
+            // metroLabel13
+            // 
+            this.metroLabel13.AutoSize = true;
+            this.metroLabel13.Location = new System.Drawing.Point(71, 76);
+            this.metroLabel13.Name = "metroLabel13";
+            this.metroLabel13.Size = new System.Drawing.Size(69, 19);
+            this.metroLabel13.TabIndex = 38;
+            this.metroLabel13.Text = "Ratio Exec";
             // 
             // Bot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1440, 661);
+            this.ClientSize = new System.Drawing.Size(1562, 659);
             this.Controls.Add(this.lvOrders);
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.btnClearLog);
@@ -3622,6 +3754,7 @@
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudManualMarketBuyContracts)).EndInit();
             this.TabControl.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nudRatioExec)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3835,15 +3968,25 @@
         private System.Windows.Forms.Timer tmrUpdateBook;
         private System.Windows.Forms.ListView lvOrders;
         private System.Windows.Forms.ColumnHeader chPrice;
-        private System.Windows.Forms.ColumnHeader chBuy;
-        private System.Windows.Forms.ColumnHeader chSell;
+        private System.Windows.Forms.ColumnHeader chPBuy;
+        private System.Windows.Forms.ColumnHeader chPSell;
         private System.Windows.Forms.ColumnHeader chRatio;
         private System.Windows.Forms.ColumnHeader chDiff;
         private System.Windows.Forms.ColumnHeader chDifPrice;
         private System.Windows.Forms.ColumnHeader chBitmex;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader chBMDiff;
         private MetroFramework.Controls.MetroLabel mlPrice;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader chSignal;
         private System.Windows.Forms.CheckBox cbSaveFile;
+        private System.Windows.Forms.ColumnHeader chVSell;
+        private System.Windows.Forms.ColumnHeader chVBuy;
+        private System.Windows.Forms.CheckBox cbAutoTrade;
+        private System.Windows.Forms.ComboBox cbOBLimit;
+        private MetroFramework.Controls.MetroLabel mlSellPVol;
+        private MetroFramework.Controls.MetroLabel mlBuyPVol;
+        private MetroFramework.Controls.MetroLabel mlRatio;
+        private System.Windows.Forms.NumericUpDown nudRatioExec;
+        private MetroFramework.Controls.MetroLabel metroLabel13;
+        private MetroFramework.Controls.MetroLabel metroLabel6;
     }
 }
